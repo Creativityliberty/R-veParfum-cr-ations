@@ -98,12 +98,12 @@ const SCENT_COLLECTIONS = [
       },
       {
         name: "Clémentine Monoï",
-        family: "Hespéridé, solaire",
-        notes: "Zeste de clémentine, Fleur de tiaré, Musc",
-        tête: "Zeste de clémentine, Orange douce",
-        coeur: "Fleur de tiaré, Jasmin blanc",
-        fond: "Musc chaud, Ambre ensoleillé",
-        desc: "Un accord pétillant et fruité, mêlant la fraîcheur acidulée de l'agrume au sillage exotique du monoï.",
+        family: "Hespéridé, floral",
+        notes: "Orange, cyclamen, Clémentine, monoï, Musc, vanille",
+        tête: "Orange, cyclamen",
+        coeur: "Clémentine, monoï",
+        fond: "Musc, vanille",
+        desc: "Un voyage tropical capturé dans une fragrance, où la fraîcheur de la clémentine rencontre la douceur florale du monoï. Les notes de tête d'orange et de cyclamen révèlent un cœur fruité et floral, soutenu par une base douce de musc et de vanille, offrant une évasion olfactive ensoleillée.",
         popular: false
       },
       {
@@ -148,13 +148,13 @@ const SCENT_COLLECTIONS = [
 
 export default function ScentGuideModal({ isOpen, onClose }: ScentGuideModalProps) {
   const images = [
-    { img: parfum1, title: "Senteurs Gourmandes & Fruitées" },
-    { img: parfum2, title: "Senteurs Fleuries & Sucrées" },
+    { img: parfum1, title: "Cerise Noire Explosive" },
+    { img: parfum2, title: "Pommes d'Amour" },
     { img: parfum3, title: "Senteurs Envoûtantes" },
     { img: parfum4, title: "Les Authentiques de Grasse" },
     { img: parfum5, title: "Accords Rares" },
-    { img: parfum6, title: "Sillages d'Exception" },
-    { img: parfum7, title: "Sélection d'Atelier" },
+    { img: parfum6, title: "Monoï des Îles" },
+    { img: parfum7, title: "Clémentine Monoï" },
     { img: parfum8, title: "Fraîcheur & Douceur" },
     { img: parfum9, title: "Créations Spéciales" },
     { img: parfum10, title: "Carte Complète des Senteurs" }
