@@ -88,12 +88,12 @@ const SCENT_COLLECTIONS = [
     scents: [
       {
         name: "Monoï des Îles",
-        family: "Solaire, exotique",
-        notes: "Fleur de Tiaré, Noix de coco, Vanille",
-        tête: "Ylang-Ylang, Pêche blanche",
-        coeur: "Fleur de Tiaré, Coco râpée",
-        fond: "Gousse de vanille, Ambre doux",
-        desc: "Une invitation au voyage évoquant le sable chaud et le sillage ensoleillé de l'été. Très enveloppant.",
+        family: "Fleuri, fruité, coco, vanillé",
+        notes: "Pêche, fleur d'oranger, Tiaré, rose, Vanille, noix de coco",
+        tête: "Pêche, fleur d'oranger",
+        coeur: "Tiaré, rose",
+        fond: "Vanille, noix de coco",
+        desc: "Embarquez pour un voyage tropical avec cette fragrance qui mêle des notes de pêche et de fleur d'oranger. Le cœur fleuri de tiaré et de rose se fond dans un fond chaleureux de vanille et de noix de coco, évoquant une plage paradisiaque baignée de soleil.",
         popular: false
       },
       {
