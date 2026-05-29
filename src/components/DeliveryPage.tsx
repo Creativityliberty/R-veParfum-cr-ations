@@ -18,6 +18,8 @@ import {
   Sparkles,
 } from "lucide-react";
 
+import retraitColisImg from "../assets/images/retrait_colis.png";
+
 interface DeliveryPageProps {
   onNavigateToContact?: () => void;
   onNavigateToBoutique?: () => void;
@@ -432,46 +434,49 @@ export default function DeliveryPage({
           </div>
         </section>
 
-        {/* 7. RETRAIT À DOMICILE DIRECT */}
-        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-brand-depth/25 p-6 md:p-8 rounded-3xl border border-brand-pink/10 relative overflow-hidden">
+        {/* 7. RETRAIT À DOMICILE DIRECT & LOCKERS */}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch bg-brand-depth/25 p-6 md:p-8 rounded-3xl border border-brand-pink/10 relative overflow-hidden">
           <div className="space-y-4">
             <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-brand-pink/10 text-brand-pink text-[10px] font-mono uppercase tracking-wider font-bold">
               <MapPin className="w-3.5 h-3.5" />
-              Remis en direct
+              Retrait Colis & Atelier
             </span>
             <h3 className="text-xl font-serif font-bold text-brand-cream">
-              Retrait à l'atelier de Bourgogne
+              Retrait en Point Relais ou à l'Atelier
             </h3>
             <p className="text-xs text-brand-text-muted leading-relaxed font-light">
-              Nous fixons ensemble par messagerie un créneau souple pour votre
-              venue. Votre commande vous est remise en mains propres, entourée
-              d'un sac kraft recyclé soigné. L'adresse exacte de rendez-vous
-              vous est communiquée dès confirmation finale de la cire végétale
-              coulée.
+              Pour récupérer vos colis, nous vous proposons la livraison sécurisée via Mondial Relay (en point relais ou Lockers) ou le retrait gratuit en main propre à notre atelier de Bourgogne. 
             </p>
             <ul className="space-y-2 text-[11px] font-mono text-brand-text-muted">
               <li className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-brand-pink shrink-0" />
-                Retrait 100% gratuit, sans aucun frais de manutention
+                Retrait Atelier 100% gratuit
               </li>
               <li className="flex items-center gap-2">
                 <CheckCircle className="w-4 h-4 text-brand-pink shrink-0" />
-                Idéal pour faire connaissance et partager notre amour des
-                senteurs
+                Réseau Mondial Relay disponible partout en France
               </li>
             </ul>
           </div>
-          <div className="p-6 bg-brand-bg rounded-2xl border border-brand-pink/5 text-center space-y-4 shadow-inner">
-            <div className="flex justify-center">
-              <MapPin className="w-8 h-8 text-brand-pink bg-brand-pink/10 p-1.5 rounded-full" />
+
+          <div className="relative p-6 bg-brand-bg rounded-2xl border border-brand-pink/5 flex flex-col justify-center items-center text-center space-y-4 shadow-inner min-h-[200px] overflow-hidden group">
+            {/* Espace de présentation élégant de la consigne automatique */}
+            <div className="absolute inset-0 bg-brand-depth/40 z-0">
+              <img 
+                src={retraitColisImg} 
+                alt="Mondial Relay Consigne Locker 24/7" 
+                className="w-full h-full object-cover opacity-35 group-hover:opacity-45 transition-all duration-500 scale-100 group-hover:scale-105"
+              />
             </div>
-            <p className="text-xs text-brand-cream font-serif italic">
-              "Une occasion parfaite de récupérer vos cires au vert, à l'heure
-              qui vous arrange."
-            </p>
-            <span className="block text-[10px] font-mono text-brand-text-muted/60 uppercase">
-              Christelle &amp; Mélanie · Bourgogne
-            </span>
+            
+            <div className="relative z-10 flex flex-col items-center">
+              <div className="flex justify-center mb-3 bg-white p-2 rounded-xl">
+                <img src="https://upload.wikimedia.org/wikipedia/fr/4/4b/Mondial_Relay_logo.svg" alt="Mondial Relay" className="h-6 object-contain" />
+              </div>
+              <p className="text-xs text-brand-cream font-serif italic max-w-[200px] bg-black/40 px-3 py-2 rounded-lg backdrop-blur-sm border border-brand-pink/20">
+                "Une occasion parfaite de récupérer vos cires au vert, ou au Locker le plus proche."
+              </p>
+            </div>
           </div>
         </section>
 

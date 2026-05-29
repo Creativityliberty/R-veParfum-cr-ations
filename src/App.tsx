@@ -390,7 +390,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* Column 3: Social grids */}
+            {/* Column 3: Social grids & Delivery */}
             <div className="md:col-span-3 text-left">
               <h4 className="text-xs uppercase font-mono tracking-widest text-brand-cream font-bold mb-4">Rejoignez-nous</h4>
               <p className="text-[11px] text-brand-text-muted leading-relaxed font-light mb-4">Suivez notre fabrication artisanale au jour le jour sur nos réseaux sociaux d'artistes.</p>
@@ -412,6 +412,13 @@ export default function App() {
                 >
                   Instagram
                 </a>
+              </div>
+
+              <div className="mt-8">
+                <h4 className="text-xs uppercase font-mono tracking-widest text-brand-cream font-bold mb-4">Livraison de Confiance</h4>
+                <div className="flex items-center justify-center p-3 rounded-xl bg-white/90 shadow-sm inline-flex">
+                  <img src="https://upload.wikimedia.org/wikipedia/fr/4/4b/Mondial_Relay_logo.svg" alt="Mondial Relay" className="h-5 object-contain" referrerPolicy="no-referrer" />
+                </div>
               </div>
             </div>
 
