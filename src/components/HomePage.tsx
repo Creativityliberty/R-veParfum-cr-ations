@@ -26,6 +26,7 @@ import HeroVideo from "./HeroVideo";
 import AnimatedHeadline from "./AnimatedHeadline";
 import LifestyleCarousel from "./LifestyleCarousel";
 import { Product } from "../types";
+import atelierBourgogneImg from "../assets/images/atelier/atelier_bourgogne.png";
 
 interface HomePageProps {
   setCurrentTab: (tab: string) => void;
@@ -320,6 +321,29 @@ export default function HomePage({
               "Explorez au-delà des mots notre sélection de contenants et formats coulés en Bourgogne.",
             )}
           </p>
+        </div>
+
+        {/* Elegant Bourgonian Workshop Banner above Categories Grid */}
+        <div className="relative rounded-[2rem] overflow-hidden aspect-[21/9] md:aspect-[3/1] border border-brand-pink/15 shadow-2xl group">
+          <img
+            src={atelierBourgogneImg}
+            alt="Mises en contexte et fabrication à l'atelier"
+            className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
+            referrerPolicy="no-referrer"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-brand-bg/95 via-brand-bg/20 to-transparent md:bg-gradient-to-r md:from-brand-bg/90 md:via-brand-bg/25 md:to-transparent" />
+          
+          <div className="absolute bottom-6 left-6 md:left-12 max-w-lg text-left space-y-2">
+            <span className="text-[10px] font-mono text-brand-pink uppercase tracking-widest font-bold block">
+              Savoir-Faire Artisanal
+            </span>
+            <h3 className="font-serif font-bold text-2xl md:text-3xl text-brand-cream leading-tight">
+              Façonné à la main en Bourgogne
+            </h3>
+            <p className="hidden md:block text-xs text-brand-text-muted leading-relaxed font-light">
+              Mélanie & Christelle conçoivent vos bougies, fondants, suspensions et bouquets avec de pures matières végétales et locales.
+            </p>
+          </div>
         </div>
 
         {/* Dynamic portal Grid with Asymmetric alignment offsets */}

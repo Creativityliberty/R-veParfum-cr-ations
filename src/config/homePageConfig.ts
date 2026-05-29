@@ -2,6 +2,7 @@ import bougiePotImg from '../assets/images/products/bougie_pot_artisanale.png';
 import coffretImg from '../assets/images/products/coffret_cadeau_luxe.png';
 import fondantsImg from '../assets/images/products/fondants_parfumes.png';
 import atelierCoulageImg from '../assets/images/atelier/atelier_bougie_coulage.png';
+import atelierBourgogneImg from '../assets/images/atelier/atelier_bourgogne.png';
 import categoryBougiesImg from '../assets/images/categories/category_bougies.png';
 import categoryFondantsImg from '../assets/images/categories/category_fondants.png';
 import categoryBouquetsImg from '../assets/images/categories/category_bouquets.png';
@@ -17,9 +18,9 @@ export const homePageConfig = {
   },
 
   media: {
-    heroVideoUrl: "https://player.vimeo.com/external/435674703.sd.mp4?s=7fdbc9d8cfcc942f7413d72a74c43d839da4a8d4&profile_id=165&oauth2_token_id=57447761",
-    heroPoster: atelierCoulageImg,
-    fallbackHeroImage: "/src/assets/images/hero_perfume_1779963676925.png",
+    heroVideoUrl: "", // Disabled to show the stunning background image directly
+    heroPoster: atelierBourgogneImg,
+    fallbackHeroImage: "/src/assets/images/atelier/atelier_bourgogne.png",
     craftVideoUrl: "https://player.vimeo.com/external/454583794.sd.mp4?s=d94eb3ed5b86a8ff35df17cfb6208bb42f4cfae9&profile_id=165&oauth2_token_id=57447761",
   },
 

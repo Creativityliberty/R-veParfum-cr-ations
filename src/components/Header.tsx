@@ -43,7 +43,7 @@ export default function Header({ currentTab, setCurrentTab, openScentQuiz, openS
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 pt-4 pb-2 md:px-8">
       {/* Floating Capsule Container */}
-      <div className="max-w-7xl mx-auto backdrop-blur-md bg-brand-bg/80 border border-brand-pink/20 rounded-full px-6 py-3 shadow-lg transition-all duration-300">
+      <div className="max-w-7xl mx-auto backdrop-blur-md bg-brand-bg/85 border border-brand-pink/20 rounded-full px-4 sm:px-6 py-2 shadow-lg transition-all duration-300">
         <div className="flex items-center justify-between">
           
           {/* Brand Logo & Name */}
@@ -51,8 +51,8 @@ export default function Header({ currentTab, setCurrentTab, openScentQuiz, openS
             onClick={() => handleTabClick('accueil')} 
             className="flex items-center gap-2 group cursor-pointer text-left focus:outline-none"
           >
-            <span className="text-xl md:text-2xl font-serif font-semibold tracking-wide text-brand-pink drop-shadow-sm group-hover:text-amber-100 transition-colors">
-              Rêve Parfumé <span className="font-light italic text-brand-purple">Création</span>
+            <span className="text-xs sm:text-sm md:text-base lg:text-lg font-serif font-semibold tracking-widest uppercase text-brand-pink drop-shadow-sm group-hover:text-amber-100 transition-colors whitespace-nowrap">
+              RÊVE PARFUMÉ<span className="hidden sm:inline font-light italic tracking-normal text-brand-purple lowercase ml-1">création</span>
             </span>
           </button>
 
@@ -112,20 +112,21 @@ export default function Header({ currentTab, setCurrentTab, openScentQuiz, openS
           </div>
 
           {/* Mobile Menu Actions */}
-          <div className="flex items-center gap-3 lg:hidden">
+          <div className="flex items-center gap-2 lg:hidden">
             <button 
               onClick={() => handleTabClick('boutique')}
-              className="p-1.5 rounded-full bg-brand-pink/10 text-brand-pink hover:bg-brand-pink text-xs hover:text-brand-bg"
+              className="px-3 py-1.5 rounded-full bg-brand-pink text-brand-bg hover:bg-brand-pink-hover font-mono text-[9px] sm:text-[10px] uppercase font-black tracking-wider flex items-center gap-1 shadow-md transition-all cursor-pointer"
               title="Boutique"
             >
-              <ShoppingBag className="w-4 h-4" />
+              <ShoppingBag className="w-3 h-3 text-brand-bg" />
+              Boutique
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-1.5 rounded-full text-brand-text-muted hover:text-brand-cream transition-colors cursor-pointer"
               aria-label="Toggle menu"
             >
-              {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
 

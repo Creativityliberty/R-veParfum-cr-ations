@@ -11,6 +11,12 @@ import {
   Gift,
 } from "lucide-react";
 
+import mariage1 from '../assets/images/events/mariage_1.jpeg';
+import produitsMix1 from '../assets/images/products/produits_mix_1.jpeg';
+import produitsMix2 from '../assets/images/products/produits_mix_2.jpeg';
+import bapteme3 from '../assets/images/events/bapteme_3.jpeg';
+import accueil2 from '../assets/images/atelier/accueil_2.jpeg';
+
 interface LifestyleSlide {
   id: number;
   title: string;
@@ -29,8 +35,7 @@ const LIFESTYLE_SLIDES: LifestyleSlide[] = [
     category: "Mariages & Célébrations",
     description:
       "De délicates mini bougies en pots céramiques, fleuries et gravées au prénom de vos convives pour laisser un sillage impérissable de votre plus belle journée.",
-    image:
-      "https://images.unsplash.com/photo-1519225495810-7512c696505a?auto=format&fit=crop&w=1200&q=80",
+    image: mariage1,
     context:
       "Mis en situation : Une réception bohème en plein air, sous les tonnelles en lin.",
     quote:
@@ -43,8 +48,7 @@ const LIFESTYLE_SLIDES: LifestyleSlide[] = [
     category: "Intérieurs Chaleureux",
     description:
       "Harmonisez vos moments de pause. Un sillage léger de Fleur de Coton pour envelopper votre bibliothèque ou votre pièce de vie favorite d'une douceur infinie.",
-    image:
-      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+    image: produitsMix1,
     context:
       "Mis en situation : Un après-midi pluvieux de Bourgogne, éclairé par la lueur ambrée d'un pot d'apothicaire.",
     quote:
@@ -57,8 +61,7 @@ const LIFESTYLE_SLIDES: LifestyleSlide[] = [
     category: "Inspiration de Table",
     description:
       "Ajoutez une touche d'or et de cire dure florale. Nos cadres parfumés suspendus ou posés ornent les serviettes de vos invités, servant à la fois de marque-place poétique et de sachet souvenir parfumant.",
-    image:
-      "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80",
+    image: produitsMix2,
     context:
       "Mis en situation : Une table de fête de Fêtes de fin d'année, entre cire de soja parfumée, branches de pin et verres cristallins.",
     quote:
@@ -71,8 +74,7 @@ const LIFESTYLE_SLIDES: LifestyleSlide[] = [
     category: "Fraîcheur & Bain d'Énergie",
     description:
       "Un bouquet aux tiges de rotin diffusant en continu de l'Eucalyptus et de la Menthe sauvage. Une respiration pure et détoxifiante pour recharger vos énergies dès le matin.",
-    image:
-      "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=1200&q=80",
+    image: bapteme3,
     context:
       "Mis en situation : Une salle d'eau épurée à l'ambiance spa scandinave.",
     quote:
@@ -85,8 +87,7 @@ const LIFESTYLE_SLIDES: LifestyleSlide[] = [
     category: "Coulées d'Émotion",
     description:
       "Découvrez notre quotidien artisanal. Christelle et Mélanie sélectionnent les brassées de lavandes régionales et coulent la cire veloutée à température parfaite pour garantir un brûlage homogène.",
-    image:
-      "https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=1200&q=80",
+    image: accueil2,
     context:
       "Mis en situation : Les comptoirs fleuris de notre atelier bourguignon baigné du soleil matinal.",
     quote:

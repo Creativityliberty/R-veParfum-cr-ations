@@ -61,6 +61,8 @@ export default function HeroVideo() {
     };
   }, []);
 
+  const hasVideo = !!homePageConfig.media.heroVideoUrl;
+
   return (
     <div className="absolute inset-0 w-full h-full object-cover overflow-hidden bg-brand-bg select-none pointer-events-none z-0">
       {/* Background fallback image first */}
@@ -68,29 +70,31 @@ export default function HeroVideo() {
         src={homePageConfig.media.heroPoster}
         alt="Atelier cire douce fallback background"
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 z-0 ${
-          isVideoLoaded ? 'opacity-20' : 'opacity-60'
+          hasVideo && isVideoLoaded ? 'opacity-25' : 'opacity-50'
         }`}
         referrerPolicy="no-referrer"
       />
 
       {/* Actual video */}
-      <video
-        ref={videoRef}
-        src={homePageConfig.media.heroVideoUrl}
-        poster={homePageConfig.media.heroPoster}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        aria-hidden="true"
-        className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity"
-        style={{ opacity: videoOpacity }}
-      />
+      {hasVideo && (
+        <video
+          ref={videoRef}
+          src={homePageConfig.media.heroVideoUrl}
+          poster={homePageConfig.media.heroPoster}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
+          className="absolute inset-0 w-full h-full object-cover z-10 transition-opacity"
+          style={{ opacity: videoOpacity }}
+        />
+      )}
 
       {/* Layered cinematic premium atmospheric overlays */}
-      <div className="absolute inset-0 bg-gradient-to-b from-brand-bg/30 via-brand-bg/15 to-brand-bg z-20" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,transparent_0%,rgba(43,13,29,0.42)_68%,rgba(43,13,29,0.86)_100%)] z-20" />
+      <div className="absolute inset-0 bg-gradient-to-b from-brand-bg/25 via-brand-bg/10 to-brand-bg z-20" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,transparent_0%,rgba(43,13,29,0.38)_68%,rgba(43,13,29,0.82)_100%)] z-20" />
 
       {/* Gentle center wax glow behind display heading */}
       <div 
