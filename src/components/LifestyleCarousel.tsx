@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import {
   ChevronLeft,
@@ -7,8 +7,8 @@ import {
   Heart,
   Camera,
   Info,
-  Home,
-  Gift,
+  Play,
+  Pause,
 } from "lucide-react";
 
 import mariage1 from '../assets/images/events/mariage_1.jpeg';
@@ -39,7 +39,7 @@ const LIFESTYLE_SLIDES: LifestyleSlide[] = [
     context:
       "Mis en situation : Une réception bohème en plein air, sous les tonnelles en lin.",
     quote:
-      '"Chaque convive est reparti ému, emportant avec lui l\'odeur divine de notre union." — Camille (Mariée 2025)',
+      '"Chaque convive s\'est reparti ému, emportant avec lui l\'odeur divine de notre union." — Camille (Mariée 2025)',
     accentNote: "Inspiration : Lin brut & Fleur de Coton",
   },
   {
@@ -60,7 +60,7 @@ const LIFESTYLE_SLIDES: LifestyleSlide[] = [
     title: "La Table Raffinée en Fête",
     category: "Inspiration de Table",
     description:
-      "Ajoutez une touche d'or et de cire dure florale. Nos cadres parfumés suspendus ou posés ornent les serviettes de vos invités, servant à la fois de marque-place poétique et de sachet souvenir parfumant.",
+      "Ajoutez une touche d'or et de cire dure florale. Nos cadres parfumés suspendus ou posés ornent les serviettes de vos invités, serving à la fois de marque-place poétique et de sachet souvenir parfumant.",
     image: produitsMix2,
     context:
       "Mis en situation : Une table de fête de Fêtes de fin d'année, entre cire de soja parfumée, branches de pin et verres cristallins.",
@@ -99,6 +99,8 @@ const LIFESTYLE_SLIDES: LifestyleSlide[] = [
 export default function LifestyleCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(0); // -1 for left, 1 for right
+  const [isPlaying, setIsPlaying] = useState(true);
+  const timerRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleNext = () => {
     setDirection(1);
@@ -112,22 +114,47 @@ export default function LifestyleCarousel() {
     );
   };
 
+  // Autoplay functionality matching shadcn/embla autoplay plugin
+  useEffect(() => {
+    if (isPlaying) {
+      timerRef.current = setInterval(() => {
+        handleNext();
+      }, 6000);
+    } else {
+      if (timerRef.current) clearInterval(timerRef.current);
+    }
+
+    return () => {
+      if (timerRef.current) clearInterval(timerRef.current);
+    };
+  }, [isPlaying, currentIndex]);
+
   const activeSlide = LIFESTYLE_SLIDES[currentIndex];
 
   const slideVariants = {
     enter: (dir: number) => ({
-      x: dir > 0 ? 300 : -300,
+      x: dir > 0 ? 150 : -150,
       opacity: 0,
+      scale: 1.0,
     }),
     center: {
       x: 0,
       opacity: 1,
-      transition: { duration: 0.4, ease: "easeOut" },
+      scale: 1.06, // Premium Apple-style Ken Burns zoom effect
+      transition: {
+        x: { duration: 0.6, ease: [0.16, 1, 0.3, 1] },
+        opacity: { duration: 0.5 },
+        scale: { duration: 6, ease: "linear" }
+      },
     },
     exit: (dir: number) => ({
-      x: dir < 0 ? 300 : -300,
+      x: dir < 0 ? 150 : -150,
       opacity: 0,
-      transition: { duration: 0.3, ease: "easeIn" },
+      scale: 1.0,
+      transition: { 
+        x: { duration: 0.5, ease: [0.16, 1, 0.3, 1] },
+        opacity: { duration: 0.4 } 
+      },
     }),
   };
 
@@ -150,21 +177,39 @@ export default function LifestyleCarousel() {
         </div>
 
         {/* Carousel buttons */}
-        <div className="flex items-center gap-2 self-start">
+        <div className="flex items-center gap-2 self-start md:self-end">
+          {/* Autoplay Play/Pause Toggle button */}
           <button
-            onClick={handlePrev}
+            type="button"
+            onClick={() => setIsPlaying(!isPlaying)}
+            className="w-10 h-10 rounded-full bg-brand-bg/90 border border-brand-pink/15 text-brand-pink hover:bg-brand-pink/20 flex items-center justify-center transition-all cursor-pointer shadow"
+            title={isPlaying ? "Mettre en pause le défilement" : "Lancer le défilement"}
+          >
+            {isPlaying ? <Pause className="w-4 h-4" /> : <Play className="w-4 h-4" />}
+          </button>
+
+          <button
+            type="button"
+            onClick={() => {
+              setIsPlaying(false); // Stop on user interaction
+              handlePrev();
+            }}
             className="w-10 h-10 rounded-full bg-brand-bg/90 border border-brand-pink/15 text-brand-text-muted hover:text-brand-cream hover:bg-brand-pink/20 flex items-center justify-center transition-all cursor-pointer shadow"
             title="Précédent"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
 
-          <span className="font-mono text-xs text-brand-pink/90 px-3 bg-brand-depth/40 py-1.5 rounded-full border border-brand-pink/5">
+          <span className="font-mono text-xs text-brand-pink/90 px-3 bg-brand-depth/40 py-1.5 rounded-full border border-brand-pink/5 select-none">
             {currentIndex + 1} / {LIFESTYLE_SLIDES.length}
           </span>
 
           <button
-            onClick={handleNext}
+            type="button"
+            onClick={() => {
+              setIsPlaying(false); // Stop on user interaction
+              handleNext();
+            }}
             className="w-10 h-10 rounded-full bg-brand-bg/90 border border-brand-pink/15 text-brand-text-muted hover:text-brand-cream hover:bg-brand-pink/20 flex items-center justify-center transition-all cursor-pointer shadow"
             title="Suivant"
           >
@@ -198,7 +243,7 @@ export default function LifestyleCarousel() {
             </AnimatePresence>
 
             {/* In-context light floating tag overlay ('Touch of White' look) */}
-            <div className="absolute bottom-4 left-4 right-4 md:left-6 md:right-6 backdrop-blur-md bg-white/95 text-brand-bg border border-white/40 p-3 rounded-xl flex items-center justify-between shadow-lg">
+            <div className="absolute bottom-4 left-4 right-4 md:left-6 md:right-6 backdrop-blur-md bg-white/95 text-brand-bg border border-white/40 p-3 rounded-xl flex items-center justify-between shadow-lg z-10">
               <span className="text-[10px] font-mono text-brand-bg/85 break-words uppercase tracking-wider font-semibold flex items-center gap-1.5 leading-none">
                 <Info className="w-3.5 h-3.5 text-brand-bg/80 shrink-0" />
                 {activeSlide.context}
@@ -253,7 +298,7 @@ export default function LifestyleCarousel() {
                 Intégrable à l'Atelier
               </span>
               <span className="text-brand-pink font-semibold flex items-center gap-1">
-                <Heart className="w-3.5 h-3.5 inline text-brand-pink hover:scale-110 transition-transform" />
+                <Heart className="w-3.5 h-3.5 inline text-brand-pink hover:scale-110 transition-transform cursor-pointer" />
                 Personnalisable à 100%
               </span>
             </div>
@@ -266,11 +311,12 @@ export default function LifestyleCarousel() {
         {LIFESTYLE_SLIDES.map((_, i) => (
           <button
             key={i}
+            type="button"
             onClick={() => {
               setDirection(i > currentIndex ? 1 : -1);
               setCurrentIndex(i);
             }}
-            className={`h-2 rounded-full transition-all duration-300 ${
+            className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
               i === currentIndex
                 ? "w-6 bg-brand-pink"
                 : "w-2 bg-brand-pink/20 hover:bg-brand-pink/50"

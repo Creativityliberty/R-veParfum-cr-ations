@@ -242,20 +242,44 @@ Pouvez-vous me conseiller et m'indiquer ce qui est possible ?`.trim();
             <div className="lg:col-span-8 bg-brand-depth/40 border border-brand-pink/10 rounded-[2.5rem] p-6 md:p-10 backdrop-blur-md relative overflow-hidden">
                 <div className="absolute top-0 right-[-10%] w-64 h-64 bg-brand-pink/10 rounded-full blur-[80px] pointer-events-none" />
                 
-                {/* Stepper */}
-                <div className="flex overflow-x-auto no-scrollbar gap-2 mb-8 border-b border-brand-pink/10 pb-4">
-                    {stepLabels.map((lbl, i) => (
-                        <button 
-                            key={i} 
-                            onClick={() => setCurrentStep(i)}
-                            className={`flex whitespace-nowrap items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition-colors ${currentStep === i ? 'bg-brand-pink text-brand-bg' : 'text-brand-text-muted hover:text-brand-cream hover:bg-brand-depth'}`}
-                        >
-                            <span className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] ${currentStep === i ? 'bg-brand-bg text-brand-pink' : 'border border-brand-pink/30 text-brand-pink'}`}>
-                                {i + 1}
-                            </span>
-                            {lbl}
-                        </button>
-                    ))}
+                {/* Stepper Header (Timeline Progress Bar) */}
+                <div className="relative flex items-center justify-between w-full max-w-2xl mx-auto mb-10 px-2 py-4">
+                    {/* Connecting Line background */}
+                    <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-0.5 bg-brand-pink/10 z-0" />
+                    
+                    {/* Progress Line */}
+                    <div 
+                        className="absolute left-0 top-1/2 -translate-y-1/2 h-0.5 bg-brand-pink z-0 transition-all duration-500 ease-out" 
+                        style={{ width: `${(currentStep / (stepLabels.length - 1)) * 100}%` }}
+                    />
+
+                    {stepLabels.map((lbl, i) => {
+                        const isCompleted = i < currentStep;
+                        const isActive = i === currentStep;
+                        return (
+                            <button 
+                                key={i} 
+                                type="button"
+                                onClick={() => setCurrentStep(i)}
+                                className="relative z-10 flex flex-col items-center group cursor-pointer focus:outline-none"
+                            >
+                                <div className={`w-8 h-8 rounded-full flex items-center justify-center border-2 transition-all duration-350 text-[10px] font-mono font-bold shadow-md ${
+                                    isActive 
+                                        ? "bg-brand-pink border-brand-pink text-brand-bg scale-[1.08]" 
+                                        : isCompleted 
+                                            ? "bg-brand-depth border-brand-pink text-brand-pink"
+                                            : "bg-brand-depth border-brand-pink/20 text-brand-text-muted hover:border-brand-pink/55"
+                                }`}>
+                                    {isCompleted ? <Icons.Check className="w-3.5 h-3.5" /> : i + 1}
+                                </div>
+                                <span className={`absolute top-10 text-[9px] font-mono uppercase tracking-wider font-semibold whitespace-nowrap transition-all hidden md:block ${
+                                    isActive ? "text-brand-pink font-extrabold" : "text-brand-text-muted group-hover:text-brand-cream"
+                                }`}>
+                                    {lbl}
+                                </span>
+                            </button>
+                        );
+                    })}
                 </div>
 
                 {/* Form Content */}

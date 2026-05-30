@@ -310,25 +310,51 @@ Pouvez-vous me conseiller et me confirmer ce qui est possible ?`.trim();
           className="scroll-mt-28 space-y-6"
           id="personalization-composer"
         >
-          {/* Step Stepper Header */}
-          <div className="max-w-7xl mx-auto px-2">
-            <div className="flex border-b border-brand-pink/10 overflow-x-auto no-scrollbar scroll-smooth gap-1 pt-2 pb-4">
-              {config.steps.map((step, idx) => (
-                <button
-                  key={idx}
-                  onClick={() => setCurrentStep(idx)}
-                  className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold tracking-wide shrink-0 transition-all ${
-                    currentStep === idx
-                      ? "bg-brand-pink text-brand-bg font-extrabold shadow-md"
-                      : "bg-brand-depth/40 text-brand-text-muted hover:text-brand-cream hover:bg-brand-depth/60 border border-brand-pink/5"
-                  }`}
-                >
-                  <span className="w-4 h-4 rounded-full border border-current flex items-center justify-center text-[10px] font-mono">
-                    {idx + 1}
-                  </span>
-                  <span>{step.title}</span>
-                </button>
-              ))}
+          {/* Step Stepper Header (Timeline View) */}
+          <div className="max-w-4xl mx-auto px-4 py-8 mb-4">
+            <div className="relative flex items-center justify-between w-full">
+              {/* Connecting Line background */}
+              <div className="absolute left-0 right-0 top-1/2 -translate-y-1/2 h-0.5 bg-brand-pink/10 z-0" />
+              
+              {/* Progress Line */}
+              <div 
+                className="absolute left-0 top-1/2 -translate-y-1/2 h-0.5 bg-brand-pink z-0 transition-all duration-500 ease-out" 
+                style={{ width: `${(currentStep / (config.steps.length - 1)) * 100}%` }}
+              />
+
+              {config.steps.map((step, idx) => {
+                const isCompleted = idx < currentStep;
+                const isActive = idx === currentStep;
+                return (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={() => setCurrentStep(idx)}
+                    className="relative z-10 flex flex-col items-center group cursor-pointer focus:outline-none"
+                  >
+                    {/* Circle Indicator */}
+                    <div 
+                      className={`w-9 h-9 rounded-full flex items-center justify-center border-2 transition-all duration-350 text-xs font-mono font-bold shadow-md ${
+                        isActive 
+                          ? "bg-brand-pink border-brand-pink text-brand-bg scale-[1.08]" 
+                          : isCompleted 
+                            ? "bg-brand-depth border-brand-pink text-brand-pink"
+                            : "bg-brand-depth border-brand-pink/20 text-brand-text-muted hover:border-brand-pink/55"
+                      }`}
+                    >
+                      {isCompleted ? <Icons.Check className="w-4 h-4" /> : idx + 1}
+                    </div>
+                    {/* Text Label (Hidden on small mobile screens to save space) */}
+                    <span 
+                      className={`absolute top-11 text-[9px] font-mono uppercase tracking-widest font-semibold whitespace-nowrap transition-all hidden sm:block ${
+                        isActive ? "text-brand-pink font-extrabold" : "text-brand-text-muted group-hover:text-brand-cream"
+                      }`}
+                    >
+                      {step.title}
+                    </span>
+                  </button>
+                );
+              })}
             </div>
           </div>
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "motion/react";
 import {
   X,
   HandHeart,
@@ -13,9 +14,15 @@ import {
   Home,
   Truck,
   ShieldCheck,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 import { Product } from "../types";
 import { SCENTS, COLORS } from "../data";
+import ScentHoverCard from "./ScentHoverCard";
+
+import atelierBourgogneImg from "../assets/images/atelier/atelier_bourgogne.png";
+import atelierCoulageImg from "../assets/images/atelier/atelier_bougie_coulage.png";
 
 interface ProductDetailsModalProps {
   product: Product;
@@ -88,6 +95,22 @@ export default function ProductDetailsModal({
   const [deliveryMode, setDeliveryMode] = useState("Retrait à l'Atelier");
   const [clientName, setClientName] = useState("");
   const [activeNoteLayer, setActiveNoteLayer] = useState<'top' | 'heart' | 'base' | null>('heart');
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+  // Dynamic image collection (Lifestyle + actual)
+  const productImages = [
+    product.image,
+    atelierCoulageImg,
+    atelierBourgogneImg
+  ];
+
+  const nextImage = () => {
+    setActiveImageIndex((prev) => (prev + 1) % productImages.length);
+  };
+
+  const prevImage = () => {
+    setActiveImageIndex((prev) => (prev - 1 + productImages.length) % productImages.length);
+  };
 
   // Scent info lookup
   const currentScentObj = SCENTS.find((s) => s.name === selectedScent);
@@ -235,13 +258,64 @@ Merci infiniment ! Au plaisir d'échanger sur la préparation de mon paquet fleu
         {/* Product Visual Scroll Column (Left) */}
         <div className="w-full md:w-1/2 p-6 md:p-8 bg-brand-depth flex flex-col justify-start border-r border-brand-pink/10 overflow-y-auto max-h-[45vh] md:max-h-[92vh]">
           <div>
-            <div className="rounded-2xl overflow-hidden border border-brand-pink/15 mb-6 aspect-square bg-brand-bg">
-              <img
-                src={product.image}
-                alt={product.name}
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
+            {/* Gallery Slide Carousel Container */}
+            <div className="relative rounded-2xl overflow-hidden border border-brand-pink/15 mb-3 aspect-square bg-brand-bg group/gallery">
+              <AnimatePresence mode="wait">
+                <motion.img
+                  key={activeImageIndex}
+                  src={productImages[activeImageIndex]}
+                  alt={`${product.name} - Vue ${activeImageIndex + 1}`}
+                  initial={{ opacity: 0, scale: 1.02 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.98 }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute inset-0 w-full h-full object-cover object-top"
+                  referrerPolicy="no-referrer"
+                />
+              </AnimatePresence>
+
+              {/* Gallery Arrow Controls */}
+              <button
+                type="button"
+                onClick={prevImage}
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-brand-bg/85 border border-brand-pink/15 text-brand-pink hover:bg-brand-pink hover:text-brand-bg flex items-center justify-center transition-all opacity-0 group-hover/gallery:opacity-100 cursor-pointer shadow-lg"
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+              <button
+                type="button"
+                onClick={nextImage}
+                className="absolute right-3 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-brand-bg/85 border border-brand-pink/15 text-brand-pink hover:bg-brand-pink hover:text-brand-bg flex items-center justify-center transition-all opacity-0 group-hover/gallery:opacity-100 cursor-pointer shadow-lg"
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+
+              {/* Slide Count Indicator Badge */}
+              <span className="absolute bottom-3 right-3 px-2.5 py-1 rounded-full bg-brand-bg/80 border border-brand-pink/10 font-mono text-[9px] uppercase tracking-widest text-brand-pink font-semibold">
+                {activeImageIndex + 1} / {productImages.length}
+              </span>
+            </div>
+
+            {/* Carousel Vignettes / Thumbnails Navigation Strip */}
+            <div className="flex gap-2 mb-6 overflow-x-auto pb-1.5 scrollbar-thin">
+              {productImages.map((img, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => setActiveImageIndex(i)}
+                  className={`w-14 h-14 rounded-lg overflow-hidden shrink-0 border-2 transition-all cursor-pointer ${
+                    activeImageIndex === i
+                      ? "border-brand-pink scale-[1.03] shadow-md"
+                      : "border-brand-pink/10 opacity-60 hover:opacity-100"
+                  }`}
+                >
+                  <img
+                    src={img}
+                    alt={`Vignette ${i + 1}`}
+                    className="w-full h-full object-cover object-top"
+                  />
+                </button>
+              ))}
             </div>
 
             <div className="space-y-6">
@@ -350,19 +424,20 @@ Merci infiniment ! Au plaisir d'échanger sur la préparation de mon paquet fleu
               </span>
               <div className="grid grid-cols-2 gap-2 mt-2">
                 {product.scents.map((scentName) => (
-                  <button
-                    key={scentName}
-                    type="button"
-                    onClick={() => setSelectedScent(scentName)}
-                    className={`p-3 text-left rounded-xl text-xs font-medium border transition-colors cursor-pointer flex items-center gap-2 ${
-                      selectedScent === scentName
-                        ? "bg-brand-pink/15 border-brand-pink text-brand-pink font-bold"
-                        : "bg-brand-depth/60 border-brand-pink/5 text-brand-text-muted hover:border-brand-pink/40"
-                    }`}
-                  >
-                    <Flower className="w-3.5 h-3.5 text-brand-pink shrink-0" />
-                    {scentName}
-                  </button>
+                  <ScentHoverCard key={scentName} scentName={scentName} className="w-full relative inline-block">
+                    <button
+                      type="button"
+                      onClick={() => setSelectedScent(scentName)}
+                      className={`w-full p-3 text-left rounded-xl text-xs font-medium border transition-colors cursor-pointer flex items-center gap-2 ${
+                        selectedScent === scentName
+                          ? "bg-brand-pink/15 border-brand-pink text-brand-pink font-bold"
+                          : "bg-brand-depth/60 border-brand-pink/5 text-brand-text-muted hover:border-brand-pink/40"
+                      }`}
+                    >
+                      <Flower className="w-3.5 h-3.5 text-brand-pink shrink-0" />
+                      {scentName}
+                    </button>
+                  </ScentHoverCard>
                 ))}
               </div>
               {currentScentObj && (
