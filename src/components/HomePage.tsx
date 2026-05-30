@@ -148,11 +148,11 @@ export default function HomePage({
         <div className="max-w-7xl mx-auto w-full relative z-20 pt-16 md:pt-24 pb-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content Side */}
-            <div className="lg:col-span-7 space-y-8 text-left">
+            <div className="lg:col-span-7 space-y-8 text-center lg:text-left flex flex-col items-center lg:items-start">
               {/* Premium Glow Eyebrow */}
               <motion.div
                 {...motionPresets.fadeBlurUp(0.1)}
-                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full liquid-glass border border-brand-pink/20 text-brand-pink text-xs font-mono uppercase tracking-widest font-extrabold"
+                className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full liquid-glass border border-brand-pink/20 text-brand-pink text-[9px] sm:text-xs font-mono uppercase tracking-widest font-extrabold"
               >
                 <Sparkles className="w-3.5 h-3.5 animate-pulse text-brand-pink" />
                 {homePageConfig.hero.eyebrow}
@@ -164,7 +164,7 @@ export default function HomePage({
               {/* Description */}
               <motion.p
                 {...motionPresets.fadeBlurUp(0.4)}
-                className="text-sm md:text-base text-brand-text-muted leading-relaxed max-w-xl font-light"
+                className="text-sm md:text-base text-brand-text-muted leading-relaxed max-w-xl font-light mx-auto lg:mx-0"
               >
                 {homePageConfig.hero.subtitle}
               </motion.p>
@@ -172,13 +172,13 @@ export default function HomePage({
               {/* Responsive Elegant CTAs button rows with subtle gloss overlays (Nocturnal glow) */}
               <motion.div
                 {...motionPresets.fadeBlurUp(0.55)}
-                className="flex flex-col sm:flex-row gap-4 pt-2"
+                className="flex flex-col sm:flex-row gap-4 pt-2 w-full justify-center lg:justify-start"
               >
                 <button
                   onClick={() =>
                     navigateTo(homePageConfig.hero.primaryCta.target)
                   }
-                  className="px-8 py-4 bg-brand-pink text-brand-bg font-black text-xs tracking-wider uppercase rounded-full hover:bg-brand-pink-hover transition-all flex items-center justify-center gap-2 shadow-2xl hover:-translate-y-0.5 cursor-pointer"
+                  className="w-full sm:w-auto px-8 py-4 bg-brand-pink text-brand-bg font-black text-xs tracking-wider uppercase rounded-full hover:bg-brand-pink-hover transition-all flex items-center justify-center gap-2 shadow-2xl hover:-translate-y-0.5 cursor-pointer"
                 >
                   <Flame className="w-4 h-4 text-brand-bg fill-brand-bg animate-pulse" />
                   {homePageConfig.hero.primaryCta.label}
@@ -188,7 +188,7 @@ export default function HomePage({
                   onClick={() =>
                     navigateTo(homePageConfig.hero.secondaryCta.target)
                   }
-                  className="px-8 py-4 rounded-full liquid-glass text-brand-pink hover:bg-white/5 border border-brand-pink/15 transition-all text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 cursor-pointer hover:-translate-y-0.5"
+                  className="w-full sm:w-auto px-8 py-4 rounded-full liquid-glass text-brand-pink hover:bg-white/5 border border-brand-pink/15 transition-all text-xs font-bold tracking-wider uppercase flex items-center justify-center gap-2 cursor-pointer hover:-translate-y-0.5"
                 >
                   <Sparkles className="w-3.5 h-3.5 text-brand-purple" />
                   {homePageConfig.hero.secondaryCta.label}
@@ -198,11 +198,11 @@ export default function HomePage({
               {/* Horizontal Trust Markers */}
               <motion.div
                 {...motionPresets.fadeBlurUp(0.7)}
-                className="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-brand-pink/10 max-w-xl"
+                className="pt-6 grid grid-cols-2 sm:grid-cols-4 gap-4 border-t border-brand-pink/10 w-full max-w-xl text-center lg:text-left justify-items-center lg:justify-items-start"
               >
                 {homePageConfig.hero.trustBadges.map((badge, idx) => (
                   <div key={idx} className="space-y-1">
-                    <span className="text-[10px] font-mono font-bold text-brand-pink uppercase tracking-widest flex items-center gap-1">
+                    <span className="text-[10px] font-mono font-bold text-brand-pink uppercase tracking-widest flex items-center gap-1 justify-center lg:justify-start">
                       <span className="w-1.5 h-1.5 rounded-full bg-brand-pink inline-block animate-pulse" />
                       {badge}
                     </span>
@@ -393,7 +393,7 @@ export default function HomePage({
                 </div>
 
                 <div className="space-y-4 relative z-10">
-                  <div className="w-11 h-11 rounded-2xl bg-brand-bg/80 border border-brand-pink/15 flex items-center justify-center group-hover:bg-brand-pink group-hover:text-brand-bg transition-colors">
+                  <div className="w-11 h-11 glowing-icon-capsule group-hover:text-brand-pink transition-colors">
                     {getIcon(cat.icon)}
                   </div>
                   <div>

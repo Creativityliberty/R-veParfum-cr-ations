@@ -371,13 +371,13 @@ export default function ShopPage({
             </div>
 
             {/* Right: Quick actions for dropdowns and mobile filter trigger */}
-            <div className="flex items-center gap-2 justify-end w-full lg:w-auto">
+            <div className="grid grid-cols-2 gap-2 w-full lg:flex lg:items-center lg:gap-2 lg:justify-end lg:w-auto">
               {/* Sort Dropdown */}
-              <div className="relative">
+              <div className="relative w-full lg:w-auto">
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="appearance-none pr-8 pl-4 py-2.5 bg-brand-bg/60 border border-brand-pink/10 rounded-full text-xs text-brand-cream font-mono cursor-pointer focus:outline-none focus:border-brand-pink/30 hover:border-brand-pink/20 transition-colors"
+                  className="w-full appearance-none pr-8 pl-4 py-2.5 bg-brand-bg/60 border border-brand-pink/10 rounded-full text-xs text-brand-cream font-mono cursor-pointer focus:outline-none focus:border-brand-pink/30 hover:border-brand-pink/20 transition-colors"
                 >
                   {shopPageConfig.filters.sortOptions.map((opt) => (
                     <option
@@ -395,7 +395,7 @@ export default function ShopPage({
               {/* Mobile filter panel button */}
               <button
                 onClick={() => setIsMobileFiltersOpen(true)}
-                className="px-4 py-2.5 rounded-full bg-brand-bg/60 border border-brand-pink/10 hover:border-brand-pink/30 hover:text-brand-cream text-xs text-brand-pink font-mono tracking-wider uppercase flex items-center gap-1.5 cursor-pointer"
+                className="w-full justify-center lg:w-auto px-4 py-2.5 rounded-full bg-brand-bg/60 border border-brand-pink/10 hover:border-brand-pink/30 hover:text-brand-cream text-xs text-brand-pink font-mono tracking-wider uppercase flex items-center gap-1.5 cursor-pointer"
               >
                 <SlidersHorizontal className="w-3.5 h-3.5 text-brand-pink" />
                 Filtres

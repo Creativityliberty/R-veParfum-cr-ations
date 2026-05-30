@@ -181,3 +181,54 @@ body {
 .scroll-to-top {
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
+/* Volumetric and Glowing Icon Capsules */
+.glowing-icon-capsule {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.25rem;
+  background: radial-gradient(135deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border: 1px solid rgba(239, 198, 210, 0.15); /* brand-pink/15 */
+  box-shadow: 
+    0 8px 24px -8px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.12),
+    inset 0 -1px 1px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.glowing-icon-capsule::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(239, 198, 210, 0.2) 0%, transparent 60%);
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.glowing-icon-capsule::after {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  background: radial-gradient(circle, rgba(239, 198, 210, 0.12) 0%, transparent 60%);
+  filter: blur(8px);
+  opacity: 0;
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.glowing-icon-capsule:hover {
+  transform: translateY(-2px);
+  border-color: rgba(239, 198, 210, 0.35);
+  box-shadow: 
+    0 12px 30px -6px rgba(239, 198, 210, 0.12),
+    0 0 12px rgba(239, 198, 210, 0.08),
+    inset 0 1px 2px rgba(255, 255, 255, 0.18);
+}
+
+.glowing-icon-capsule:hover::after {
+  opacity: 1;
+}

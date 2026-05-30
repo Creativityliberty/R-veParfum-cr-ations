@@ -11,13 +11,13 @@ export default function AnimatedHeadline() {
 
   return (
     <h1 
-      className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-serif font-black tracking-tight text-brand-cream leading-[0.92] text-left uppercase"
+      className="text-4xl sm:text-6xl lg:text-7xl xl:text-8xl font-serif font-black tracking-tight text-brand-cream leading-[0.92] text-center lg:text-left uppercase"
       style={{ letterSpacing: "-0.04em" }}
     >
       {headlineLines.map((line, lineIndex) => {
         const words = line.split(' ');
         return (
-          <div key={lineIndex} className="block overflow-hidden pb-2 last:pb-0">
+          <div key={lineIndex} className="flex flex-wrap justify-center lg:justify-start overflow-hidden pb-2 last:pb-0">
             {words.map((word, wordIndex) => {
               wordCounter++;
               const isHighlighted = homePageConfig.hero.highlightedWords.includes(

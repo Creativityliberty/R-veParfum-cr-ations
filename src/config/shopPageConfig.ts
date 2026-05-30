@@ -89,10 +89,10 @@ export const shopPageConfig = {
       { id: "Détente", label: "Détente & Soin", icon: "Compass" },
     ],
     sortOptions: [
-      { id: "featured", label: "Sélection de Mélanie & Christelle" },
-      { id: "priceAsc", label: "Tarif : croissant" },
-      { id: "priceDesc", label: "Tarif : décroissant" },
-      { id: "rating", label: "Les mieux notés" },
+      { id: "featured", label: "Sélection Atelier" },
+      { id: "priceAsc", label: "Prix : croissant" },
+      { id: "priceDesc", label: "Prix : décroissant" },
+      { id: "rating", label: "Mieux notés" },
     ],
   },
 

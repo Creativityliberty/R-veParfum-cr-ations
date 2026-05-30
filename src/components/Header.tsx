@@ -48,10 +48,13 @@ export default function Header({ currentTab, setCurrentTab, openScentQuiz, openS
           {/* Brand Logo & Name */}
           <button 
             onClick={() => handleTabClick('accueil')} 
-            className="flex items-center gap-2 group cursor-pointer text-left focus:outline-none"
+            className="flex flex-col gap-0.5 group cursor-pointer text-left focus:outline-none"
           >
-            <span className="text-xs sm:text-sm md:text-base lg:text-lg font-serif font-semibold tracking-widest uppercase text-brand-pink drop-shadow-sm group-hover:text-amber-100 transition-colors whitespace-nowrap">
-              RÊVE PARFUMÉ<span className="hidden sm:inline font-light italic tracking-normal text-brand-purple lowercase ml-1">création</span>
+            <span className="text-sm sm:text-base md:text-lg font-serif font-black tracking-widest uppercase text-brand-cream drop-shadow-sm group-hover:text-brand-pink transition-colors whitespace-nowrap leading-none">
+              RÊVE PARFUMÉ
+            </span>
+            <span className="text-[9px] font-mono tracking-widest text-brand-pink uppercase leading-none pl-0.5 block">
+              création
             </span>
           </button>
 

@@ -3,6 +3,7 @@ import coffretImg from '../assets/images/products/coffret_cadeau_luxe.png';
 import fondantsImg from '../assets/images/products/fondants_parfumes.png';
 import atelierCoulageImg from '../assets/images/atelier/atelier_bougie_coulage.png';
 import produitsMix1 from '../assets/images/products/produits_mix_1.jpeg';
+import bouquetCompagnon1 from '../assets/images/products/bouquet_compagnon_1.jpeg';
 import atelierCreatricesHero from '../assets/images/atelier/atelier_creatrices_hero.png';
 import categoryBougiesImg from '../assets/images/categories/category_bougies.png';
 import categoryFondantsImg from '../assets/images/categories/category_fondants.png';
@@ -145,10 +146,10 @@ export const homePageConfig = {
   },
 
   categories: [
-    { label: "Bougies", description: "Pour créer une ambiance enveloppante", icon: "Flame", target: "shop?category=bougies", image: categoryBougiesImg },
-    { label: "Fondants", description: "Pour changer de parfum au gré des envies", icon: "Sparkles", target: "shop?category=fondants", image: categoryFondantsImg },
-    { label: "Bouquets", description: "Un objet décoratif qui parfume délicatement", icon: "Flower2", target: "shop?category=bouquets", image: categoryBouquetsImg },
-    { label: "Cadeaux", description: "Des coffrets doux et personnalisables", icon: "Gift", target: "shop?category=coffrets", image: categoryCadeauxImg }
+    { label: "Bougies", description: "Pour créer une ambiance enveloppante", icon: "Flame", target: "shop?category=bougies", image: bougiePotImg },
+    { label: "Fondants", description: "Pour changer de parfum au gré des envies", icon: "Sparkles", target: "shop?category=fondants", image: fondantsImg },
+    { label: "Bouquets", description: "Un objet décoratif qui parfume délicatement", icon: "Flower2", target: "shop?category=bouquets", image: bouquetCompagnon1 },
+    { label: "Cadeaux", description: "Des coffrets doux et personnalisables", icon: "Gift", target: "shop?category=coffrets", image: coffretImg }
   ],
 
   featuredProducts: [
@@ -164,7 +165,7 @@ export const homePageConfig = {
       name: "Bouquet de tiges de rotin",
       tag: "Décoratif",
       description: "Une pièce parfumée qui habille une pièce autant qu’elle l’embaume.",
-      image: fondantsImg,
+      image: bouquetCompagnon1,
       target: "shop",
       priceText: "À partir de 24,00 €"
     },
