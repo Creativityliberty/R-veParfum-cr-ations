@@ -94,15 +94,18 @@ const EventProcessTimeline = () => {
                     Comment se déroule une demande événement ?
                 </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
-                <div className="hidden md:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-brand-pink/0 via-brand-pink/20 to-brand-pink/0" />
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+                <div className="hidden md:block absolute top-[44px] left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-brand-pink/0 via-brand-pink/20 to-brand-pink/0 z-0" />
                 {config.process.map((step, idx) => (
-                    <div key={idx} className="relative z-10 p-6 bg-brand-depth/40 border border-brand-pink/10 rounded-3xl text-center backdrop-blur-sm hover:border-brand-pink/30 transition-colors">
-                        <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-brand-pink/10 border border-brand-pink/20 flex items-center justify-center text-brand-pink">
+                    <div 
+                        key={idx} 
+                        className="relative z-10 p-6 bg-brand-depth/40 border border-brand-pink/5 rounded-[2rem] text-center backdrop-blur-sm hover:border-brand-pink/20 hover:bg-brand-depth/60 transition-all duration-300 shadow-lg group flex flex-col items-center"
+                    >
+                        <div className="w-12 h-12 rounded-full bg-brand-depth border border-brand-pink/20 flex items-center justify-center text-brand-pink group-hover:scale-105 group-hover:border-brand-pink transition-all shadow-md mb-4">
                             <DynamicIcon name={step.icon} className="w-5 h-5" />
                         </div>
-                        <div className="text-xs font-mono text-brand-pink mb-2">Étape {idx + 1}</div>
-                        <h3 className="font-serif font-bold text-brand-cream text-lg">{step.title}</h3>
+                        <div className="text-[10px] font-mono text-brand-pink uppercase tracking-widest font-bold mb-1">Étape 0{idx + 1}</div>
+                        <h3 className="font-serif font-bold text-brand-cream text-base group-hover:text-brand-pink transition-colors">{step.title}</h3>
                     </div>
                 ))}
             </div>

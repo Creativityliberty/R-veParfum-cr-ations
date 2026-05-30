@@ -1083,21 +1083,27 @@ Pouvez-vous me conseiller et me confirmer ce qui est possible ?`.trim();
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 relative">
+              {/* Desktop Connecting horizontal line */}
+              <div className="hidden lg:block absolute top-[36px] left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-brand-pink/0 via-brand-pink/20 to-brand-pink/0 z-0" />
+
               {config.process.steps.map((pStep, i) => (
                 <div
                   key={i}
-                  className="bg-brand-depth/40 border border-brand-pink/5 hover:border-brand-pink/15 p-6 rounded-2xl space-y-4 relative group backdrop-blur-sm"
+                  className="bg-brand-depth/40 border border-brand-pink/5 hover:border-brand-pink/20 hover:bg-brand-depth/60 p-6 rounded-[2rem] space-y-4 relative group backdrop-blur-sm transition-all duration-300 shadow-lg text-left z-10"
                 >
-                  <span className="absolute top-4 right-4 text-3xl font-serif font-black text-brand-pink/10 group-hover:text-brand-pink/25 transition-colors">
+                  {/* Glowing step bubble */}
+                  <div className="w-10 h-10 rounded-full bg-brand-depth border border-brand-pink/20 flex items-center justify-center font-serif text-xs font-black text-brand-pink group-hover:scale-105 group-hover:border-brand-pink transition-all shadow-md">
                     0{i + 1}
-                  </span>
-                  <span className="w-2 h-2 rounded-full bg-brand-pink block animate-pulse" />
-                  <h3 className="font-serif font-bold text-base text-brand-cream">
-                    {pStep.title}
-                  </h3>
-                  <p className="text-xs text-brand-text-muted leading-relaxed font-light">
-                    {pStep.desc}
-                  </p>
+                  </div>
+                  
+                  <div className="space-y-2 pt-1">
+                    <h3 className="font-serif font-bold text-base text-brand-cream group-hover:text-brand-pink transition-colors">
+                      {pStep.title}
+                    </h3>
+                    <p className="text-xs text-brand-text-muted leading-relaxed font-light">
+                      {pStep.desc}
+                    </p>
+                  </div>
                 </div>
               ))}
             </div>
