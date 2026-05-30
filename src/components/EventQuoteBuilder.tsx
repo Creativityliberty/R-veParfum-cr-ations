@@ -54,7 +54,7 @@ export default function EventQuoteBuilder() {
 Merci d'avance pour votre aide précieuse, j'ai hâte de donner vie à notre projet !`;
 
     const encoded = encodeURIComponent(textMsg);
-    window.open(`https://wa.me/33600000000?text=${encoded}`, "_blank");
+    window.open(`https://wa.me/33781710985?text=${encoded}`, "_blank");
   };
 
   return (

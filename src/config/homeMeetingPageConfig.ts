@@ -30,7 +30,7 @@ export const homeMeetingPageConfig = {
   brand: {
     name: "Rêve Parfumé Création",
     shortName: "Rêve Parfumé",
-    whatsappNumber: "33600000000",
+    whatsappNumber: "33781710985",
   },
 
   page: {

@@ -370,8 +370,12 @@ export default function App() {
               <p className="text-xs text-brand-text-muted leading-relaxed font-light">
                 Des créations parfumées faites main, pensées pour offrir, décorer et parfumer avec douceur. Concepteur de douceurs parfumées saines et artisanales à base de pure cire végétale de soja et de véritables fleurs séchées locales.
               </p>
-              <div className="pt-2 text-[11px] font-mono text-brand-pink/80">
-                Normandie, France · Co-géré par Christelle & Mélanie
+              <div className="pt-2 text-[11px] font-mono text-brand-pink/80 space-y-1">
+                <div>Normandie, France · Co-géré par Christelle & Mélanie</div>
+                <div className="text-[10px] text-brand-text-muted">
+                  Tél Christelle : 06.68.83.08.03 &nbsp;·&nbsp; SIRET 828 471 920 00029<br />
+                  Tél Mélanie : 07.81.71.09.85 &nbsp;·&nbsp; SIRET 992 363 911 00015
+                </div>
               </div>
             </div>
 
@@ -433,7 +437,7 @@ export default function App() {
               <button onClick={() => { setLegalSubTab('livraison-retrait'); setCurrentTab('legals'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-brand-pink transition-colors">Politique Livraison / Retrait</button>
             </div>
             
-            <div className="font-mono">
+            <div className="font-mono text-right">
               &copy; {new Date().getFullYear()} Rêve Parfumé · Fabriqué avec amour en France
             </div>
           </div>
@@ -444,7 +448,7 @@ export default function App() {
       {/* Permanent floating chat trigger speed dial for mobile / desktop layout */}
       <div className="fixed bottom-6 left-6 z-40">
         <a 
-          href="https://wa.me/33600000000?text=Bonjour%20M%C3%A9lanie%20et%20Christelle%2C%20je%20souhaite%20me%20renseigner%20sur%20vos%20cr%C3%A9ations%20parfum%C3%A9es%20!" 
+          href="https://wa.me/33781710985?text=Bonjour%20M%C3%A9lanie%20et%20Christelle%2C%20je%20souhaite%20me%20renseigner%20sur%20vos%20cr%C3%A9ations%20parfum%C3%A9es%20!" 
           target="_blank" 
           rel="noopener noreferrer"
           className="flex items-center gap-2 group p-4.5 bg-brand-pink text-brand-bg font-extrabold text-sm rounded-full shadow-2xl hover:bg-brand-pink-hover transition-all duration-300 scale-100 hover:scale-105"

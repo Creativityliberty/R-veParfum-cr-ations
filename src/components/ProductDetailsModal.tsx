@@ -228,19 +228,19 @@ export default function ProductDetailsModal({
 * Étiquette / Option : ${personalization ? personalization : "Modèle Original Rêve Parfumé"}
 
 [ LIVRAISON & COORDONNÉES ]
-* Service retenu : ${deliveryMode || "Retrait à l'Atelier (Bourgogne)"}
+* Service retenu : ${deliveryMode || "Retrait à l'Atelier (Normandie)"}
 * Nom du Bénéficiaire : ${clientName}
 
 Merci infiniment ! Au plaisir d'échanger sur la préparation de mon paquet fleuri.`.trim();
 
     const encoded = encodeURIComponent(msg);
-    window.open(`https://wa.me/33600000000?text=${encoded}`, "_blank");
+    window.open(`https://wa.me/33781710985?text=${encoded}`, "_blank");
   };
 
   const handleWhatsAppInquiry = () => {
     const inquiryMsg = `Bonjour, je m'intéresse à votre création ${product.name} et je souhaite vous poser une question à son sujet.`;
     const encoded = encodeURIComponent(inquiryMsg);
-    window.open(`https://wa.me/33600000000?text=${encoded}`, "_blank");
+    window.open(`https://wa.me/33781710985?text=${encoded}`, "_blank");
   };
 
   return (

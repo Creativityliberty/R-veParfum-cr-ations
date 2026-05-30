@@ -10,7 +10,7 @@ export type ScentFamilyKey =
 export const shopPageConfig = {
   brand: {
     name: "Rêve Parfumé Création",
-    whatsappNumber: "33600000000",
+    whatsappNumber: "33781710985",
   },
 
   page: {

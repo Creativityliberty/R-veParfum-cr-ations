@@ -44,7 +44,7 @@ export const reviewsPageConfig = {
   brand: {
     name: "Rêve Parfumé Création",
     shortName: "Rêve Parfumé",
-    whatsappNumber: "33768830803",
+    whatsappNumber: "33781710985",
   },
 
   page: {
