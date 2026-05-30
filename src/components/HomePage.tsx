@@ -379,7 +379,7 @@ export default function HomePage({
                 }}
                 {...motionPresets.fadeBlurUp(idx * 0.1)}
                 whileHover={{ y: -6, transition: { duration: 0.22 } }}
-                className={`group liquid-glass p-6 rounded-[2rem] flex flex-col justify-between hover:border-brand-pink/30 hover:bg-brand-bg/50 transition-all cursor-pointer shadow-lg min-h-[220px] relative overflow-hidden ${styleOffset}`}
+                className={`group liquid-glass border-beam-active p-6 rounded-[2rem] flex flex-col justify-between hover:border-brand-pink/30 hover:bg-brand-bg/50 transition-all cursor-pointer shadow-lg min-h-[220px] relative overflow-hidden ${styleOffset}`}
               >
                 {/* Category background image */}
                 <div className="absolute inset-0 z-0">
@@ -846,49 +846,56 @@ export default function HomePage({
               Le sillage du bonheur
             </h2>
             <p className="text-xs text-brand-text-muted">
-              Découvrez les retours de notre aimable clientèle séduite par le
-              raffinement de l'Atelier.
+              Découvrez les retours de notre aimable clientèle séduite par le raffinement de l'Atelier.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
               {
-                author: "Marie-Laure D.",
-                date: "12 Avril 2026",
-                note: "Mariage en Provence",
+                author: "Amelia Saint-yves",
+                date: "16 déc. 2025",
+                note: "Recommande Rêve Parfumé",
                 excerpt:
-                  "Un sans faute absolu ! Christelle nous a confectionné 120 mini-bougies fleur de cérisier en céramique personnalisées pour nos convives. Tous sont repartis émerveillés et parfumés d'émotions.",
-                icon: <CheckCircle2 className="w-5 h-5 text-emerald-400" />,
+                  "Un véritable coup de cœur 😍. Les créations de Christelle et Mélanie sont absolument sublimes et sentent incroyablement bon. Le parfum est intense et se diffuse parfaitement.",
+                icon: <Heart className="w-5 h-5 text-brand-pink" />,
               },
               {
-                author: "Frédéric G.",
-                date: "15 Mai 2026",
-                note: "Cadeau Hôtesse",
+                author: "Manon Leullier",
+                date: "10 oct. 2025",
+                note: "Recommande Rêve Parfumé",
                 excerpt:
-                  "L'atelier à domicile est extraordinaire ! Mélanie est arrivée chez nous avec sa malle aromatique remplie d'explications et d'entrain. Une après-midi cocooning mémorable à renouveler absolument.",
+                  "Super produits ! Les bougies sentent divinement bon et les fondants se diffusent parfaitement dans la maison. Je recommande sans hésiter ! ✨🌸",
                 icon: <Sparkles className="w-5 h-5 text-brand-purple" />,
               },
               {
-                author: "Stéphanie P.",
-                date: "24 Mai 2026",
-                note: "Commande Boutique",
+                author: "Sandrine Mauger",
+                date: "4 janv. 2026",
+                note: "Recommande Rêve Parfumé",
                 excerpt:
-                  "Les fondants au caramel beurre salé parfument ma bibliothèque pour plusieurs journées sans aucune lourdeur. Le paquet est soigné, scellé d'un délicat brin de paille séchée. Je recommande les yeux fermés.",
+                  "Très belle création appréciée de mes convives, je recommande vivement.",
+                icon: <CheckCircle2 className="w-5 h-5 text-emerald-400" />,
+              },
+              {
+                author: "Valérie Jolly",
+                date: "17 janv. 2026",
+                note: "Recommande Rêve Parfumé",
+                excerpt:
+                  "Merci beaucoup, très beau travail, cela sent super bon. À bientôt.",
                 icon: <Heart className="w-5 h-5 text-brand-pink" />,
               },
             ].map((test, tIdx) => (
               <motion.div
                 key={tIdx}
                 {...motionPresets.fadeBlurUp(tIdx * 0.1)}
-                className="p-6 rounded-2xl liquid-glass text-left space-y-4 hover:border-brand-pink/20 transition-all flex flex-col justify-between"
+                className="p-6 rounded-3xl liquid-glass border-beam-active text-left space-y-4 hover:border-brand-pink/20 hover:bg-brand-bg/50 transition-all flex flex-col justify-between"
               >
                 <div className="space-y-3">
-                  <div className="flex items-center gap-1.5 text-amber-300">
+                  <div className="flex items-center gap-1">
                     {[...Array(5)].map((_, starI) => (
                       <Star
                         key={starI}
-                        className="w-3.5 h-3.5 fill-amber-300"
+                        className="w-3.5 h-3.5 fill-amber-300 text-amber-300"
                       />
                     ))}
                   </div>
@@ -902,11 +909,11 @@ export default function HomePage({
                     <span className="font-bold text-brand-cream block">
                       {test.author}
                     </span>
-                    <span className="text-[9px] text-brand-text-muted font-mono">
-                      {test.note}
+                    <span className="text-[9px] text-brand-text-muted font-mono flex items-center gap-1">
+                      {test.icon} {test.note}
                     </span>
                   </div>
-                  <span className="text-[9px] text-brand-pink font-mono">
+                  <span className="text-[9px] text-brand-pink font-mono shrink-0">
                     {test.date}
                   </span>
                 </div>

@@ -363,9 +363,14 @@ export default function App() {
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
                    {/* Column 1: Intro brand */}
             <div className="md:col-span-5 text-center md:text-left space-y-4">
-              <h3 className="text-2xl font-serif font-bold text-brand-pink tracking-wide">
-                Rêve Parfumé <span className="font-light italic text-brand-purple">Création</span>
-              </h3>
+              <div className="flex flex-col gap-0.5 text-center md:text-left">
+                <span className="text-lg md:text-xl font-serif font-black tracking-widest uppercase text-brand-cream drop-shadow-sm leading-none">
+                  RÊVE PARFUMÉ
+                </span>
+                <span className="text-[10px] font-mono tracking-widest text-brand-pink uppercase leading-none pl-0.5 block">
+                  création
+                </span>
+              </div>
               <p className="text-xs text-brand-text-muted leading-relaxed font-light">
                 Des créations parfumées faites main, pensées pour offrir, décorer et parfumer avec douceur. Concepteur de douceurs parfumées saines et artisanales à base de pure cire végétale de soja et de véritables fleurs séchées locales.
               </p>
@@ -456,6 +461,24 @@ export default function App() {
           <PhoneCall className="w-5 h-5 text-brand-bg" />
           <span className="hidden md:inline-block text-xs uppercase tracking-widest leading-none font-bold">Aide WhatsApp (Conseil)</span>
         </a>
+      </div>
+
+      {/* Permanent floating lateral widget for 'À Propos' */}
+      <div className="fixed right-0 top-1/2 -translate-y-1/2 z-40 hidden md:block">
+        <button
+          onClick={() => {
+            setCurrentTab('a-propos');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }}
+          className="flex items-center gap-2.5 py-5 px-3 bg-brand-depth/95 backdrop-blur-md border-l border-y border-brand-pink/20 hover:border-brand-pink/40 text-brand-cream hover:text-brand-pink rounded-l-2xl shadow-[0_0_20px_rgba(0,0,0,0.4)] transition-all duration-300 group cursor-pointer translate-x-2 hover:translate-x-0"
+          style={{ writingMode: 'vertical-rl', textOrientation: 'mixed' }}
+          title="À Propos - Notre Histoire"
+        >
+          <div className="flex items-center gap-2 rotate-180">
+            <BookHeart className="w-4 h-4 text-brand-pink group-hover:scale-110 transition-transform duration-300" />
+            <span className="text-[10px] font-mono tracking-widest uppercase font-black">Notre Histoire 🌸</span>
+          </div>
+        </button>
       </div>
 
       {/* Scroll-to-top button */}

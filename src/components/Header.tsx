@@ -17,7 +17,6 @@ export default function Header({ currentTab, setCurrentTab, openScentQuiz, openS
     { label: 'Personnalisation', id: 'personnalisation' },
     { label: 'Événements', id: 'evenements' },
     { label: 'Livraison', id: 'livraison' },
-    { label: 'À Propos', id: 'a-propos' },
     { label: 'Contact', id: 'contact' }
   ];
 

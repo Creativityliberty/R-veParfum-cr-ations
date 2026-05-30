@@ -11,7 +11,7 @@ interface ProductCardProps {
 export default function ProductCard({ product, onSelect }: ProductCardProps) {
   return (
     <div 
-      className="group relative bg-brand-depth border border-brand-pink/10 rounded-3xl p-5 hover:border-brand-pink/40 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between overflow-hidden"
+      className="group relative bg-brand-depth border border-brand-pink/10 border-beam-active rounded-3xl p-5 hover:border-brand-pink/40 hover:shadow-2xl transition-all duration-300 flex flex-col justify-between overflow-hidden"
       id={`card-${product.id}`}
     >
       {/* Decorative gradient glowing backing on hover */}

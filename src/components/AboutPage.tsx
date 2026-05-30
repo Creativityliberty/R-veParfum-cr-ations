@@ -369,7 +369,7 @@ export default function AboutPage({
               {steps.map((st, idx) => (
                 <div
                   key={idx}
-                  className="p-6 bg-brand-depth border border-brand-pink/5 rounded-2xl space-y-4 hover:border-brand-pink/20 transition-all flex flex-col justify-between group"
+                  className="p-6 bg-brand-depth border border-brand-pink/5 rounded-2xl space-y-4 hover:border-brand-pink/20 border-beam-active transition-all flex flex-col justify-between group"
                 >
                   <div className="space-y-3">
                     <div className="flex justify-between items-center">
@@ -426,18 +426,18 @@ export default function AboutPage({
         </section>
 
         {/* 5. VALEURS GRID (6 CARTES BENTO UNIQUE) */}
-        <section className="space-y-12">
-          <div className="text-center max-w-xl mx-auto space-y-2">
-            <span className="text-xs font-mono text-brand-pink uppercase tracking-widest font-bold">
-              Nos 6 piliers
-            </span>
-            <h2 className="text-2xl md:text-3xl font-serif font-bold text-brand-cream">
-              Engagées pour un art de vivre sincère
+        <section className="space-y-16">
+          <div className="text-center max-w-2xl mx-auto space-y-4">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-pink/10 border border-brand-pink/20 text-brand-pink text-xs font-mono font-bold uppercase tracking-widest leading-none">
+              <Sparkles className="w-3.5 h-3.5" />
+              Charte de Confiance
+            </div>
+            <h2 className="text-3xl md:text-5xl font-serif font-black text-brand-cream leading-tight">
+              Nos 6 Piliers Fondateurs
             </h2>
-            <p className="text-xs text-brand-text-muted max-w-sm mx-auto leading-relaxed">
-              En choisissant Rêve Parfumé Création, vous encouragez des
-              engagements nobles, sains et respectueux de la santé de votre
-              demeure.
+            <div className="h-0.5 w-16 bg-brand-pink/40 mx-auto rounded-full" />
+            <p className="text-xs md:text-sm text-brand-text-muted max-w-lg mx-auto leading-relaxed font-light">
+              En choisissant Rêve Parfumé Création, vous encouragez des engagements éthiques et sains pour sublimer l'atmosphère de votre demeure en toute sérénité.
             </p>
           </div>
 
@@ -446,32 +446,56 @@ export default function AboutPage({
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+            className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8"
           >
             {values.map((v, i) => {
               const bentoSpan = 
-                i === 0 ? "md:col-span-2 bg-brand-depth/55 border-brand-pink/15" :
-                i === 4 ? "md:col-span-2 bg-brand-depth/55 border-brand-pink/15" :
-                "md:col-span-1";
+                i === 0 ? "md:col-span-2 bg-gradient-to-br from-brand-depth/85 to-brand-bg/95" :
+                i === 4 ? "md:col-span-2 bg-gradient-to-br from-brand-depth/85 to-brand-bg/95" :
+                "md:col-span-1 bg-gradient-to-br from-brand-depth/75 to-brand-bg/90";
+              
+              // Dynamic glowing orb colors for depth
+              const glowColor = 
+                i === 0 ? "bg-emerald-500/10" :
+                i === 1 ? "bg-amber-500/10" :
+                i === 2 ? "bg-purple-500/10" :
+                i === 3 ? "bg-cyan-500/10" :
+                i === 4 ? "bg-rose-500/10" :
+                "bg-pink-500/10";
               
               return (
                 <motion.div
                   key={i}
                   variants={itemVariants}
-                  className={`p-6 bg-brand-depth/40 border border-brand-pink/10 rounded-[2rem] hover:border-brand-pink/30 hover:bg-brand-depth/60 transition-all duration-300 text-left space-y-3 relative group overflow-hidden ${bentoSpan}`}
+                  className={`p-8 border border-brand-pink/15 hover:border-brand-pink/40 border-beam-active rounded-[2.5rem] shadow-[0_10px_30px_rgba(0,0,0,0.3)] hover:shadow-[0_20px_50px_rgba(217,119,149,0.12)] hover:-translate-y-1 transition-all duration-500 text-left space-y-4.5 relative group overflow-hidden cursor-default ${bentoSpan}`}
                 >
-                  {(i === 0 || i === 4) && (
-                    <div className="absolute top-0 right-0 w-32 h-32 bg-brand-pink/5 rounded-full filter blur-2xl pointer-events-none group-hover:bg-brand-pink/10 transition-colors" />
-                  )}
-                  <div className="w-10 h-10 rounded-xl bg-brand-pink/10 flex items-center justify-center border border-brand-pink/15">
-                    {v.icon}
+                  {/* Subtle color light globe in the corner */}
+                  <div className={`absolute -top-12 -right-12 w-40 h-40 ${glowColor} rounded-full filter blur-3xl pointer-events-none group-hover:scale-125 transition-transform duration-700`} />
+                  
+                  {/* Minimalistic pillar numbering */}
+                  <div className="absolute top-6 right-8 font-mono text-[10px] tracking-widest text-brand-pink/15 group-hover:text-brand-pink/35 transition-colors duration-300 font-black">
+                    PILLIER 0{i + 1}
                   </div>
-                  <h3 className="font-serif font-bold text-base text-brand-cream tracking-wide">
-                    {v.title}
-                  </h3>
-                  <p className="text-xs text-brand-text-muted font-light leading-relaxed">
-                    {v.desc}
-                  </p>
+
+                  {/* 3D Glowing Glassmorphic Icon Capsule */}
+                  <div className="w-12 h-12 rounded-2xl bg-brand-depth/80 border border-brand-pink/30 shadow-[0_0_15px_rgba(217,119,149,0.15)] flex items-center justify-center relative overflow-hidden group-hover:scale-105 group-hover:border-brand-pink/60 transition-all duration-300 shrink-0">
+                    <div className="absolute -inset-1 bg-gradient-to-tr from-brand-pink/20 to-brand-purple/20 blur-sm opacity-50 group-hover:opacity-100 transition-opacity duration-300" />
+                    <div className="relative z-10 filter drop-shadow-[0_2px_8px_rgba(217,119,149,0.3)] group-hover:rotate-6 transition-transform duration-300">
+                      {v.icon}
+                    </div>
+                  </div>
+
+                  <div className="space-y-2 relative z-10">
+                    <h3 className="font-serif font-extrabold text-lg text-brand-cream tracking-wide group-hover:text-brand-pink transition-colors duration-300">
+                      {v.title}
+                    </h3>
+                    <p className="text-[12px] md:text-xs text-brand-text-muted font-light leading-relaxed group-hover:text-brand-cream/80 transition-colors duration-300">
+                      {v.desc}
+                    </p>
+                  </div>
+
+                  {/* Micro gradient line accent */}
+                  <div className="absolute bottom-0 left-8 right-8 h-0.5 bg-gradient-to-r from-transparent via-brand-pink/0 to-transparent group-hover:via-brand-pink/30 transition-all duration-700" />
                 </motion.div>
               );
             })}

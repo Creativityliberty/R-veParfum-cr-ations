@@ -422,7 +422,6 @@ const FeaturedReviewsSection = () => {
 /* --- SCREENSHOT REVIEWS GALLERY COMPONENT --- */
 const ScreenshotReviewsGallery = () => {
   const screenshots = [
-    { img: avis1Img, title: "Avis Commande", source: "Facebook", type: "Commande réussie" },
     { img: avis2Img, title: "Retour Parfumé", source: "WhatsApp", type: "Bougie Arrosoir" },
     { img: avis3Img, title: "Cadeau Invités", source: "Messenger", type: "Mariage d'Emma" },
     { img: avis4Img, title: "Douceur Reçue", source: "WhatsApp", type: "Galets de Grasse" },

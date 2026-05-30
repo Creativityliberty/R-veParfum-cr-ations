@@ -232,3 +232,50 @@ body {
 .glowing-icon-capsule:hover::after {
   opacity: 1;
 }
+
+/* Animated border beam active class (K2000 style / auréole rotative légère) */
+@property --border-beam-angle {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+@keyframes border-beam {
+  to {
+    --border-beam-angle: 360deg;
+  }
+}
+
+.border-beam-active {
+  position: relative;
+}
+
+.border-beam-active::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.5px; /* Épaisseur du faisceau fluo */
+  background: conic-gradient(
+    from var(--border-beam-angle, 0deg),
+    transparent 0deg,
+    transparent 260deg,
+    rgba(239, 198, 210, 0.3) 290deg,   /* brand-pink soft */
+    rgba(191, 164, 216, 0.9) 330deg,   /* brand-purple fluo */
+    rgba(239, 198, 210, 0.3) 360deg
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: border-beam 9s linear infinite;
+  z-index: 5;
+  opacity: 0.6;
+  transition: opacity 0.5s ease;
+}
+
+.border-beam-active:hover::after {
+  opacity: 1;
+  animation-duration: 5s; /* Tourne plus vite au survol */
+}
+
