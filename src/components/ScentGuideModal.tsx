@@ -28,11 +28,11 @@ const SCENT_COLLECTIONS = [
       {
         name: "Cerise Noire Explosive",
         family: "Fruité, gourmand",
-        notes: "Griotte sauvage, Amande amère, Fève Tonka",
+        notes: "Amande, frangipane, Cerise, Vanille, accord gourmand",
         tête: "Amande, frangipane",
         coeur: "Cerise",
         fond: "Vanille, accord gourmand",
-        desc: "Un parfum dynamique et gourmand, qui encapsule la riche profondeur des cerises noires. La douceur de l'amande et la frangipane en tête s'ouvre sur un cœur juteux de cerise, soutenu par une base vanillée, ajoutant une touche gourmande à cette expérience olfactive explosive.",
+        desc: "Un parfum dynamique et gourmand, qui encapsule la riche profondeur des cerises noires. La douceur de l'amande et la frangipane en tête s'ouvre sur un cœur juteux de cerise, soutenu par une base vanillée, ajoutant une touche gourmande à cette expérience olfactive explosive",
         img: ceriseNoireImg,
         popular: true
       },
@@ -49,12 +49,12 @@ const SCENT_COLLECTIONS = [
       },
       {
         name: "Délice Interdit",
-        family: "Gourmand doux, sucré & envoûtant",
-        notes: "Cranberry, fruits des bois, baies sauvages, confit de framboise, musc blanc",
-        tête: "Cranberry, baies sauvages",
-        coeur: "Fruits des bois, confit de framboise",
-        fond: "Musc blanc, sucre caramélisé",
-        desc: "Une fragrance gourmande, douce, sucrée et hautement addictive qui éveille vos sens et laisse un sillage irrésistible de cranberry acidulée, fruits des bois juteux, baies sauvages et confit de framboise onctueux.",
+        family: "Fruité, Gourmand",
+        notes: "Poire fondante, Cranberry, fruits des bois, baies sauvages, Musc blanc, confit de framboise",
+        tête: "Poire fondante",
+        coeur: "Cranberry, fruits des bois, baies sauvages",
+        fond: "Musc blanc, confit de framboise",
+        desc: "Une fragrance fruitée et gourmande, délicieusement sucrée et envoûtante, qui éveille vos sens et laisse un sillage irrésistible.",
         img: deliceInterditImg,
         popular: false
       }
@@ -65,24 +65,24 @@ const SCENT_COLLECTIONS = [
     description: "La délicatesse des fleurs fraîchement cueillies et la pureté des notes poudrées.",
     scents: [
       {
-        name: "Fleur de Coton",
-        family: "Floral, poudré frais",
-        notes: "Rose, ylang-ylang, jasmin, fleur de coton, musc blanc",
+        name: "Fleurs de Coton",
+        family: "Florale",
+        notes: "Rose, ylang-ylang, Fleur de coton, jasmin, Musc, fève tonka",
         tête: "Rose, ylang-ylang",
-        coeur: "Jasmin, fleur de coton",
-        fond: "Musc blanc, poudre d'iris",
-        desc: "Évoquant la douceur rassurante d'un linge frais, ce parfum s'ouvre sur des notes douces de rose et d'ylang-ylang, dévoilant ensuite un cœur floral de jasmin et de fleur de coton, avant de s'évanouir sur un sillage poudré de muscs blancs.",
+        coeur: "Fleur de coton, jasmin",
+        fond: "Musc, fève tonka",
+        desc: "Évoquant la douceur d'un linge frais, ce parfum s'ouvre sur des notes douces de rose et d'ylang-ylang, dévoilant ensuite un cœur floral de jasmin et de fleur de coton, pour finir sur une base apaisante de musc et de fève tonka",
         img: fleurDeCottonImg,
         popular: true
       },
       {
-        name: "Lilas d'Atelier",
-        family: "Floral, vert printanier",
-        notes: "Citron, oeillet, muguet, lilas en fleur, jasmin",
-        tête: "Citron, oeillet, muguet",
-        coeur: "Lilas en fleur, jasmin",
-        fond: "Héliotrope, cèdre doux",
-        desc: "Laissez-vous transporter dans un jardin en fleur avec Lilas, une fragrance florale et verte qui évoque le renouveau du printemps. Les notes de tête révèlent un mélange frais de citron, d'œillet et de muguet, invitant à une promenade poétique parmi les fleurs.",
+        name: "Lilas",
+        family: "Floral, vert",
+        notes: "Citron, œillet, muguet, Lilas, rose, héliotrope, Jacinthe",
+        tête: "Citron, œillet, muguet",
+        coeur: "Lilas, rose, héliotrope",
+        fond: "Jacinthe",
+        desc: "Laissez-vous transporter dans un jardin en fleur avec Lilas, une fragrance florale et verte qui évoque le printemps. Les notes de tête révèlent un mélange frais de citron, d'œillet et de muguet, invitant à une promenade parmi les fleurs. Le cœur fleuri dévoile un bouquet charmant de lilas, de rose et d'héliotrope. En fond, la jacinthe ajoute une touche finale poétique, concluant cette balade printanière en beauté.",
         img: lilasAtelierImg,
         popular: false
       }
@@ -93,9 +93,9 @@ const SCENT_COLLECTIONS = [
     description: "Des fragrances lumineuses, pétillantes et gorgées de soleil.",
     scents: [
       {
-        name: "Monoï des Îles",
+        name: "Monoï",
         family: "Fleuri, fruité, coco, vanillé",
-        notes: "Pêche, fleur d'oranger, tiaré, rose, vanille, noix de coco",
+        notes: "Pêche, fleur d'oranger, Tiaré, rose, Vanille, noix de coco",
         tête: "Pêche, fleur d'oranger",
         coeur: "Tiaré, rose",
         fond: "Vanille, noix de coco",
@@ -106,7 +106,7 @@ const SCENT_COLLECTIONS = [
       {
         name: "Clémentine Monoï",
         family: "Hespéridé, floral",
-        notes: "Orange, cyclamen, clémentine, monoï, musc, vanille",
+        notes: "Orange, cyclamen, Clémentine, monoï, Musc, vanille",
         tête: "Orange, cyclamen",
         coeur: "Clémentine, monoï",
         fond: "Musc, vanille",
@@ -115,13 +115,13 @@ const SCENT_COLLECTIONS = [
         popular: false
       },
       {
-        name: "Pêche Mignonne",
-        family: "Fruité, vert, gourmand",
-        notes: "Framboise, accord vert, pêche juteuse, noix de coco",
+        name: "Pêche",
+        family: "Fruité",
+        notes: "Framboise, accord vert, Pêche, Noix de coco, accord gourmand",
         tête: "Framboise, accord vert",
-        coeur: "Pêche juteuse, nectarine",
+        coeur: "Pêche",
         fond: "Noix de coco, accord gourmand",
-        desc: "Une fragrance fruitée et lumineuse où l'éclat de la framboise et d'un accord vert ouvre la composition. Son cœur révèle une pêche juteuse et veloutée, prolongée par un fond doux de noix de coco et d'accord gourmand.",
+        desc: "Une fragrance fruitée et lumineuse où l'éclat de la framboise et d'un accord vert ouvre la composition. Son cœur révèle une pêche juteuse et veloutée, prolongée par un fond doux de noix de coco et d'accord gourmand, pour une sensation délicieusement ensoleillée.",
         img: pecheMignonneImg,
         popular: false
       }
@@ -132,24 +132,24 @@ const SCENT_COLLECTIONS = [
     description: "Des notes vivifiantes, boisées et toniques pour purifier l'atmosphère.",
     scents: [
       {
-        name: "Fruits Rouges des Bois",
-        family: "Fruité, hespéridé frais",
-        notes: "Citron, néroli, fraise, framboise, vanille, crème",
+        name: "Fruits Rouges",
+        family: "Fruité",
+        notes: "Citron, néroli, Fraise, framboise, Vanille, crème brûlée",
         tête: "Citron, néroli",
         coeur: "Fraise, framboise",
-        fond: "Vanille, crème",
-        desc: "Imprégnez-vous de la richesse des fruits rouges, mariée aux notes pétillantes de citron et de néroli. Un cœur juteux de fraise et de framboise vous entraîne vers une finale crémeuse de vanille et de crème gourmande.",
+        fond: "Vanille, crème brûlée",
+        desc: "Imprégnez-vous de la richesse des fruits rouges, mariée aux notes pétillantes de citron et de néroli. Un cœur juteux de fraise et de framboise vous entraîne vers une finale crémeuse de vanille et de crème brûlée.",
         img: fruitsRougesBoisImg,
         popular: false
       },
       {
-        name: "Agrumes Pressés",
-        family: "Agrumes, hespéridé frais",
-        notes: "Citron vert, orange, mandarine mûre, cèdre blanc, musc",
-        tête: "Citron vert, orange",
-        coeur: "Mandarine, fleur d'oranger",
-        fond: "Cèdre blanc, musc",
-        desc: "Éveillez vos sens avec ce parfum « Agrumes ». Une fragrance tonique et pétillante aux notes acidulées et rafraîchissantes de citron vert, d'orange juteuse et de mandarine, reposant sur un fond pur de cèdre et de musc.",
+        name: "Agrumes",
+        family: "Hespéridée",
+        notes: "Eucalyptus, Orange, limette, Citronnelle",
+        tête: "Eucalyptus",
+        coeur: "Orange, limette",
+        fond: "Citronnelle",
+        desc: "Éveillez vos sens avec ce parfum « Agrumes ». L'eucalyptus piquant se marie harmonieusement avec les notes lumineuses d'orange et de citron vert, le tout sur une toile de fond rafraîchissante de citronnelle, évoquant une matinée ensoleillée dans un jardin d'agrumes florissant.",
         img: agrumesPressesImg,
         popular: false
       }
@@ -162,13 +162,13 @@ export default function ScentGuideModal({ isOpen, onClose }: ScentGuideModalProp
     { img: ceriseNoireImg, title: "Cerise Noire Explosive" },
     { img: pommesAmourImg, title: "Pommes d'Amour" },
     { img: deliceInterditImg, title: "Délice Interdit" },
-    { img: fleurDeCottonImg, title: "Fleur de Coton" },
-    { img: lilasAtelierImg, title: "Lilas d'Atelier" },
-    { img: monoiIlesImg, title: "Monoï des Îles" },
+    { img: fleurDeCottonImg, title: "Fleurs de Coton" },
+    { img: lilasAtelierImg, title: "Lilas" },
+    { img: monoiIlesImg, title: "Monoï" },
     { img: clementineMonoiImg, title: "Clémentine Monoï" },
-    { img: pecheMignonneImg, title: "Pêche Mignonne" },
-    { img: fruitsRougesBoisImg, title: "Fruits Rouges des Bois" },
-    { img: agrumesPressesImg, title: "Agrumes Pressés" }
+    { img: pecheMignonneImg, title: "Pêche" },
+    { img: fruitsRougesBoisImg, title: "Fruits Rouges" },
+    { img: agrumesPressesImg, title: "Agrumes" }
   ];
 
   const [activeTab, setActiveTab] = useState<'screenshots' | 'interactive'>('screenshots');

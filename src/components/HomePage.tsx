@@ -27,6 +27,7 @@ import AnimatedHeadline from "./AnimatedHeadline";
 import LifestyleCarousel from "./LifestyleCarousel";
 import { Product } from "../types";
 import atelierBourgogneImg from "../assets/images/atelier/atelier_bourgogne.png";
+import photoDeNousImg from "../assets/images/atelier/photo_de_nous.jpeg";
 
 interface HomePageProps {
   setCurrentTab: (tab: string) => void;
@@ -717,21 +718,15 @@ export default function HomePage({
 
               <div className="relative rounded-[2rem] overflow-hidden border border-brand-pink/15 bg-brand-depth shadow-2xl aspect-video lg:aspect-square">
                 {/* Fallback frame image showing hands pouring cire */}
-                <iframe
-                  src="https://www.youtube.com/embed/z6_n8bM97d8?autoplay=1&mute=1&playlist=z6_n8bM97d8&loop=1&controls=0&showinfo=0"
-                  title="Artisanat coulée de cire vidéo"
-                  className="w-full h-full object-cover select-none pointer-events-none opacity-30 border-none scale-110"
-                  aria-hidden="true"
-                />
                 <img
-                  src="https://images.unsplash.com/photo-1603006905003-be475563bc59?auto=format&fit=crop&w=800&q=80"
-                  alt="Processus artisan Rêve Parfumé"
-                  className="absolute inset-0 w-full h-full object-cover opacity-50 pointer-events-none mix-blend-screen"
+                  src={photoDeNousImg}
+                  alt="Mélanie et Christelle - Créatrices Rêve Parfumé"
+                  className="absolute inset-0 w-full h-full object-cover object-top opacity-80"
                   referrerPolicy="no-referrer"
                 />
 
                 {/* Formulation vertical checklist note details */}
-                <div className="absolute top-4 left-4 p-4 rounded-xl bg-white text-zinc-950 font-mono text-[10px] uppercase font-black border border-white shadow-lg space-y-2 max-w-[200px] text-left transform -rotate-1">
+                <div className="absolute bottom-4 left-4 p-4 rounded-xl bg-white text-zinc-950 font-mono text-[10px] uppercase font-black border border-white shadow-lg space-y-2 max-w-[200px] text-left transform -rotate-1">
                   <span className="text-[9px] text-zinc-500 tracking-wider">
                     Formulation cire
                   </span>

@@ -13,12 +13,10 @@ export default function Header({ currentTab, setCurrentTab, openScentQuiz, openS
   const [isOpen, setIsOpen] = useState(false);
 
   const navItems = [
-    { label: 'Accueil', id: 'accueil' },
     { label: 'Boutique', id: 'boutique' },
     { label: 'Personnalisation', id: 'personnalisation' },
     { label: 'Événements', id: 'evenements' },
-    { label: 'Réunions', id: 'reunions' },
-    { label: 'Avis', id: 'avis' },
+    { label: 'À Propos', id: 'a-propos' },
     { label: 'Contact', id: 'contact' }
   ];
 

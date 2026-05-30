@@ -285,7 +285,7 @@ export default function AboutPage({
                   <img
                     src={photoDeNousImg}
                     alt="Christelle et Mélanie - Rêve Parfumé Création"
-                    className="w-full h-full object-cover filter brightness-[98%] contrast-[102%] transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover object-top filter brightness-[98%] contrast-[102%] transition-transform duration-700 group-hover:scale-105"
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-brand-bg/90 via-transparent to-transparent" />

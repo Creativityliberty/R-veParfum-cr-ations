@@ -417,7 +417,7 @@ export default function App() {
               <div className="mt-8">
                 <h4 className="text-xs uppercase font-mono tracking-widest text-brand-cream font-bold mb-4">Livraison de Confiance</h4>
                 <div className="flex items-center justify-center p-3 rounded-xl bg-white/90 shadow-sm inline-flex">
-                  <img src="https://upload.wikimedia.org/wikipedia/fr/4/4b/Mondial_Relay_logo.svg" alt="Mondial Relay" className="h-5 object-contain" referrerPolicy="no-referrer" />
+                  <img src="https://www.mondialrelay.fr/media/126147/mondial-relay-by-inpostsvglogo.png" alt="Mondial Relay" className="h-5 object-contain" referrerPolicy="no-referrer" />
                 </div>
               </div>
             </div>
