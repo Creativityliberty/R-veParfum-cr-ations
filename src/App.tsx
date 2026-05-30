@@ -361,9 +361,8 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
-            
-            {/* Column 1: Intro brand */}
-            <div className="md:col-span-5 text-left space-y-4">
+                   {/* Column 1: Intro brand */}
+            <div className="md:col-span-5 text-center md:text-left space-y-4">
               <h3 className="text-2xl font-serif font-bold text-brand-pink tracking-wide">
                 Rêve Parfumé <span className="font-light italic text-brand-purple">Création</span>
               </h3>
@@ -380,26 +379,26 @@ export default function App() {
             </div>
 
             {/* Column 2: Navigation Links */}
-            <div className="md:col-span-4 text-left">
+            <div className="md:col-span-4 text-center md:text-left">
               <h4 className="text-xs uppercase font-mono tracking-widest text-brand-cream font-bold mb-4">L'Atelier Rêve</h4>
               <div className="grid grid-cols-2 gap-y-2.5 gap-x-4 text-xs text-brand-text-muted">
-                <button onClick={() => { setCurrentTab('boutique'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-brand-pink transition-colors text-left">Boutique</button>
-                <button onClick={() => { setCurrentTab('personnalisation'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-brand-pink transition-colors text-left">Personnalisation</button>
-                <button onClick={() => { setCurrentTab('evenements'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-brand-pink transition-colors text-left">Mariages & Événements</button>
-                <button onClick={() => { setCurrentTab('reunions'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-brand-pink transition-colors text-left">Réunions à Domicile</button>
-                <button onClick={() => { setCurrentTab('avis'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-brand-pink transition-colors text-left">Avis clients</button>
-                <button onClick={() => { setCurrentTab('livraison'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-brand-pink transition-colors text-left">Livraison & Info</button>
-                <button onClick={() => { setCurrentTab('a-propos'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-brand-pink transition-colors text-left">À Propos</button>
-                <button onClick={() => { setCurrentTab('contact'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-brand-pink transition-colors text-left">Contact</button>
+                <button onClick={() => { setCurrentTab('boutique'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-brand-pink transition-colors text-center md:text-left">Boutique</button>
+                <button onClick={() => { setCurrentTab('personnalisation'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-brand-pink transition-colors text-center md:text-left">Personnalisation</button>
+                <button onClick={() => { setCurrentTab('evenements'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-brand-pink transition-colors text-center md:text-left">Mariages & Événements</button>
+                <button onClick={() => { setCurrentTab('reunions'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-brand-pink transition-colors text-center md:text-left">Réunions à Domicile</button>
+                <button onClick={() => { setCurrentTab('avis'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-brand-pink transition-colors text-center md:text-left">Avis clients</button>
+                <button onClick={() => { setCurrentTab('livraison'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-brand-pink transition-colors text-center md:text-left">Livraison & Info</button>
+                <button onClick={() => { setCurrentTab('a-propos'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-brand-pink transition-colors text-center md:text-left">À Propos</button>
+                <button onClick={() => { setCurrentTab('contact'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-brand-pink transition-colors text-center md:text-left">Contact</button>
               </div>
             </div>
 
             {/* Column 3: Social grids & Delivery */}
-            <div className="md:col-span-3 text-left">
+            <div className="md:col-span-3 text-center md:text-left flex flex-col items-center md:items-start">
               <h4 className="text-xs uppercase font-mono tracking-widest text-brand-cream font-bold mb-4">Rejoignez-nous</h4>
               <p className="text-[11px] text-brand-text-muted leading-relaxed font-light mb-4">Suivez notre fabrication artisanale au jour le jour sur nos réseaux sociaux d'artistes.</p>
               {/* TODO: Replace with real Rêve Parfumé social URLs */}
-              <div className="flex gap-4">
+              <div className="flex gap-4 justify-center md:justify-start">
                 <a 
                   href="https://facebook.com" 
                   target="_blank" 
@@ -418,7 +417,7 @@ export default function App() {
                 </a>
               </div>
 
-              <div className="mt-8">
+              <div className="mt-8 flex flex-col items-center md:items-start">
                 <h4 className="text-xs uppercase font-mono tracking-widest text-brand-cream font-bold mb-4">Livraison de Confiance</h4>
                 <div className="flex items-center justify-center p-3 rounded-xl bg-white/90 shadow-sm inline-flex">
                   <img src="https://www.mondialrelay.fr/media/126147/mondial-relay-by-inpostsvglogo.png" alt="Mondial Relay" className="h-5 object-contain" referrerPolicy="no-referrer" />
@@ -437,7 +436,7 @@ export default function App() {
               <button onClick={() => { setLegalSubTab('livraison-retrait'); setCurrentTab('legals'); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="hover:text-brand-pink transition-colors">Politique Livraison / Retrait</button>
             </div>
             
-            <div className="font-mono text-right">
+            <div className="font-mono text-center sm:text-right">
               &copy; {new Date().getFullYear()} Rêve Parfumé · Fabriqué avec amour en France
             </div>
           </div>
