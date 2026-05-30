@@ -2,23 +2,24 @@ import React, { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, ChevronLeft, ChevronRight, Sparkles, MapPin, ZoomIn, Eye, Layers, Search, ArrowLeft, Heart } from 'lucide-react';
 
-import parfum1 from '../assets/images/grasse/parfum_1.png';
-import parfum2 from '../assets/images/grasse/parfum_2.png';
-import parfum3 from '../assets/images/grasse/parfum_3.png';
-import parfum4 from '../assets/images/grasse/parfum_4.png';
-import parfum5 from '../assets/images/grasse/parfum_5.png';
-import parfum6 from '../assets/images/grasse/parfum_6.png';
-import parfum7 from '../assets/images/grasse/parfum_7.png';
-import parfum8 from '../assets/images/grasse/parfum_8.png';
-import parfum9 from '../assets/images/grasse/parfum_9.png';
-import parfum10 from '../assets/images/grasse/parfum_10.png';
+// Import newly renamed, luxury descriptive asset images
+import ceriseNoireImg from '../assets/images/grasse/cerise_noire_explosive.png';
+import pommesAmourImg from '../assets/images/grasse/pommes_amour.png';
+import deliceInterditImg from '../assets/images/grasse/delice_interdit.png';
+import fleurDeCottonImg from '../assets/images/grasse/fleur_de_cotton.png';
+import lilasAtelierImg from '../assets/images/grasse/lilas_atelier.png';
+import monoiIlesImg from '../assets/images/grasse/monoi_iles.png';
+import clementineMonoiImg from '../assets/images/grasse/clementine_monoi.png';
+import pecheMignonneImg from '../assets/images/grasse/peche_mignonne.png';
+import fruitsRougesBoisImg from '../assets/images/grasse/fruits_rouges_bois.png';
+import agrumesPressesImg from '../assets/images/grasse/agrumes_presses.png';
 
 interface ScentGuideModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
-// Complete rich fragrance database with structured olfactory notes
+// Complete rich fragrance database with structured olfactory notes matching the custom fiches
 const SCENT_COLLECTIONS = [
   {
     title: "Senteurs Gourmandes & Sucrées",
@@ -28,30 +29,33 @@ const SCENT_COLLECTIONS = [
         name: "Cerise Noire Explosive",
         family: "Fruité, gourmand",
         notes: "Griotte sauvage, Amande amère, Fève Tonka",
-        tête: "Cerise sauvage, Mandarine",
-        coeur: "Cerise noire, Amande amère",
-        fond: "Fève tonka, Musc blanc",
-        desc: "Un sillage fruité intense aux accents d'amande douce et de fruits rouges mûrs. Une vraie gourmandise.",
+        tête: "Amande, frangipane",
+        coeur: "Cerise",
+        fond: "Vanille, accord gourmand",
+        desc: "Un parfum dynamique et gourmand, qui encapsule la riche profondeur des cerises noires. La douceur de l'amande et la frangipane en tête s'ouvre sur un cœur juteux de cerise, soutenu par une base vanillée, ajoutant une touche gourmande à cette expérience olfactive explosive.",
+        img: ceriseNoireImg,
         popular: true
       },
       {
-        name: "Pomme d'Amour",
+        name: "Pommes d'Amour",
         family: "Fruité, caramel",
-        notes: "Pomme rouge, Caramel chaud, Vanille",
-        tête: "Fraise sauvage, Pêche veloutée",
-        coeur: "Pomme rouge, Caramel chaud",
-        fond: "Musc doux, Gousse de vanille",
-        desc: "L'odeur nostalgique et irrésistible des fêtes foraines. Ce parfum pour bougie est une invitation au souvenir d'enfance.",
+        notes: "Fraise, pêche, Pomme, caramel, Musc, vanille",
+        tête: "Fraise, pêche",
+        coeur: "Pomme, caramel",
+        fond: "Musc, vanille",
+        desc: "Une fragrance gourmande et réconfortante qui évoque toute la magie des pommes d'amour et la nostalgie des fêtes foraines. Les notes fruitées de fraise et de pêche ouvrent la composition, avant de révéler un cœur fondant de pomme et de caramel, prolongé par un fond doux de musc et de vanille.",
+        img: pommesAmourImg,
         popular: true
       },
       {
         name: "Délice Interdit",
-        family: "Sucre chaud, lacté",
-        notes: "Caramel au beurre salé, Lait concentré, Vanille",
-        tête: "Caramel chaud, Fleur de sel",
-        coeur: "Beurre noisette, Lait concentré",
-        fond: "Sucre roux, Vanille de Madagascar",
-        desc: "Une douceur gourmande absolue, réconfortante et délicatement lactée. Parfait pour les fins de journées fraîches.",
+        family: "Gourmand doux, sucré & envoûtant",
+        notes: "Cranberry, fruits des bois, baies sauvages, confit de framboise, musc blanc",
+        tête: "Cranberry, baies sauvages",
+        coeur: "Fruits des bois, confit de framboise",
+        fond: "Musc blanc, sucre caramélisé",
+        desc: "Une fragrance gourmande, douce, sucrée et hautement addictive qui éveille vos sens et laisse un sillage irrésistible de cranberry acidulée, fruits des bois juteux, baies sauvages et confit de framboise onctueux.",
+        img: deliceInterditImg,
         popular: false
       }
     ]
@@ -62,22 +66,24 @@ const SCENT_COLLECTIONS = [
     scents: [
       {
         name: "Fleur de Coton",
-        family: "Poudré, musqué",
-        notes: "Lin propre, Fleur de coton, Musc blanc",
-        tête: "Lin propre, Aldéhydes verts",
-        coeur: "Fleur de coton, Rose blanche",
-        fond: "Musc blanc, Poudre d'iris",
-        desc: "Une senteur pure, légère et rassurante de linge propre séché au grand air. Idéale pour purifier la chambre ou le salon.",
+        family: "Floral, poudré frais",
+        notes: "Rose, ylang-ylang, jasmin, fleur de coton, musc blanc",
+        tête: "Rose, ylang-ylang",
+        coeur: "Jasmin, fleur de coton",
+        fond: "Musc blanc, poudre d'iris",
+        desc: "Évoquant la douceur rassurante d'un linge frais, ce parfum s'ouvre sur des notes douces de rose et d'ylang-ylang, dévoilant ensuite un cœur floral de jasmin et de fleur de coton, avant de s'évanouir sur un sillage poudré de muscs blancs.",
+        img: fleurDeCottonImg,
         popular: true
       },
       {
         name: "Lilas d'Atelier",
-        family: "Floral frais",
-        notes: "Sève verte, Lilas en fleur, Héliotrope",
-        tête: "Sève verte, Mandarine fraîche",
-        coeur: "Lilas en fleur, Jasmin d'eau",
-        fond: "Héliotrope, Cèdre doux",
-        desc: "La poésie d'un bouquet fraîchement cueilli au printemps dans les jardins de Bourgogne. Naturel et bucolique.",
+        family: "Floral, vert printanier",
+        notes: "Citron, oeillet, muguet, lilas en fleur, jasmin",
+        tête: "Citron, oeillet, muguet",
+        coeur: "Lilas en fleur, jasmin",
+        fond: "Héliotrope, cèdre doux",
+        desc: "Laissez-vous transporter dans un jardin en fleur avec Lilas, une fragrance florale et verte qui évoque le renouveau du printemps. Les notes de tête révèlent un mélange frais de citron, d'œillet et de muguet, invitant à une promenade poétique parmi les fleurs.",
+        img: lilasAtelierImg,
         popular: false
       }
     ]
@@ -89,31 +95,34 @@ const SCENT_COLLECTIONS = [
       {
         name: "Monoï des Îles",
         family: "Fleuri, fruité, coco, vanillé",
-        notes: "Pêche, fleur d'oranger, Tiaré, rose, Vanille, noix de coco",
+        notes: "Pêche, fleur d'oranger, tiaré, rose, vanille, noix de coco",
         tête: "Pêche, fleur d'oranger",
         coeur: "Tiaré, rose",
         fond: "Vanille, noix de coco",
         desc: "Embarquez pour un voyage tropical avec cette fragrance qui mêle des notes de pêche et de fleur d'oranger. Le cœur fleuri de tiaré et de rose se fond dans un fond chaleureux de vanille et de noix de coco, évoquant une plage paradisiaque baignée de soleil.",
+        img: monoiIlesImg,
         popular: false
       },
       {
         name: "Clémentine Monoï",
         family: "Hespéridé, floral",
-        notes: "Orange, cyclamen, Clémentine, monoï, Musc, vanille",
+        notes: "Orange, cyclamen, clémentine, monoï, musc, vanille",
         tête: "Orange, cyclamen",
         coeur: "Clémentine, monoï",
         fond: "Musc, vanille",
         desc: "Un voyage tropical capturé dans une fragrance, où la fraîcheur de la clémentine rencontre la douceur florale du monoï. Les notes de tête d'orange et de cyclamen révèlent un cœur fruité et floral, soutenu par une base douce de musc et de vanille, offrant une évasion olfactive ensoleillée.",
+        img: clementineMonoiImg,
         popular: false
       },
       {
         name: "Pêche Mignonne",
-        family: "Fruité velouté",
-        notes: "Pêche juteuse, Nectarine, Sucre roux",
-        tête: "Nectarine fraîche, Abricot doux",
-        coeur: "Pêche de vigne juteuse, Prune blanche",
-        fond: "Sucre roux de canne, Gousse de vanille",
-        desc: "Une fragrance veloutée, douce et sucrée rappelant la pulpe du fruit mûr sous le soleil d'été.",
+        family: "Fruité, vert, gourmand",
+        notes: "Framboise, accord vert, pêche juteuse, noix de coco",
+        tête: "Framboise, accord vert",
+        coeur: "Pêche juteuse, nectarine",
+        fond: "Noix de coco, accord gourmand",
+        desc: "Une fragrance fruitée et lumineuse où l'éclat de la framboise et d'un accord vert ouvre la composition. Son cœur révèle une pêche juteuse et veloutée, prolongée par un fond doux de noix de coco et d'accord gourmand.",
+        img: pecheMignonneImg,
         popular: false
       }
     ]
@@ -124,22 +133,24 @@ const SCENT_COLLECTIONS = [
     scents: [
       {
         name: "Fruits Rouges des Bois",
-        family: "Fruité, acidulé",
-        notes: "Fraise des bois, Mûre sauvage, Framboise",
-        tête: "Fraise des bois, Myrtille noire",
-        coeur: "Mûre sauvage, Framboise acidulée",
-        fond: "Musc rouge, Sucre caramélisé",
-        desc: "Une explosion fruitée pétillante et gourmande, riche en baies sauvages parfumées évoquant la forêt.",
+        family: "Fruité, hespéridé frais",
+        notes: "Citron, néroli, fraise, framboise, vanille, crème",
+        tête: "Citron, néroli",
+        coeur: "Fraise, framboise",
+        fond: "Vanille, crème",
+        desc: "Imprégnez-vous de la richesse des fruits rouges, mariée aux notes pétillantes de citron et de néroli. Un cœur juteux de fraise et de framboise vous entraîne vers une finale crémeuse de vanille et de crème gourmande.",
+        img: fruitsRougesBoisImg,
         popular: false
       },
       {
         name: "Agrumes Pressés",
-        family: "Agrumes, frais",
-        notes: "Citron vert, Mandarine, Cèdre blanc",
-        tête: "Citron vert, Pamplemousse rose",
-        coeur: "Mandarine juteuse, Fleur d'oranger",
-        fond: "Cèdre blanc, Musc frais",
-        desc: "Un cocktail vif et tonique de notes acidulées pour dynamiser, désodoriser et rafraîchir intensément l'atmosphère.",
+        family: "Agrumes, hespéridé frais",
+        notes: "Citron vert, orange, mandarine mûre, cèdre blanc, musc",
+        tête: "Citron vert, orange",
+        coeur: "Mandarine, fleur d'oranger",
+        fond: "Cèdre blanc, musc",
+        desc: "Éveillez vos sens avec ce parfum « Agrumes ». Une fragrance tonique et pétillante aux notes acidulées et rafraîchissantes de citron vert, d'orange juteuse et de mandarine, reposant sur un fond pur de cèdre et de musc.",
+        img: agrumesPressesImg,
         popular: false
       }
     ]
@@ -148,16 +159,16 @@ const SCENT_COLLECTIONS = [
 
 export default function ScentGuideModal({ isOpen, onClose }: ScentGuideModalProps) {
   const images = [
-    { img: parfum1, title: "Cerise Noire Explosive" },
-    { img: parfum2, title: "Pommes d'Amour" },
-    { img: parfum3, title: "Senteurs Envoûtantes" },
-    { img: parfum4, title: "Les Authentiques de Grasse" },
-    { img: parfum5, title: "Accords Rares" },
-    { img: parfum6, title: "Monoï des Îles" },
-    { img: parfum7, title: "Clémentine Monoï" },
-    { img: parfum8, title: "Fraîcheur & Douceur" },
-    { img: parfum9, title: "Créations Spéciales" },
-    { img: parfum10, title: "Carte Complète des Senteurs" }
+    { img: ceriseNoireImg, title: "Cerise Noire Explosive" },
+    { img: pommesAmourImg, title: "Pommes d'Amour" },
+    { img: deliceInterditImg, title: "Délice Interdit" },
+    { img: fleurDeCottonImg, title: "Fleur de Coton" },
+    { img: lilasAtelierImg, title: "Lilas d'Atelier" },
+    { img: monoiIlesImg, title: "Monoï des Îles" },
+    { img: clementineMonoiImg, title: "Clémentine Monoï" },
+    { img: pecheMignonneImg, title: "Pêche Mignonne" },
+    { img: fruitsRougesBoisImg, title: "Fruits Rouges des Bois" },
+    { img: agrumesPressesImg, title: "Agrumes Pressés" }
   ];
 
   const [activeTab, setActiveTab] = useState<'screenshots' | 'interactive'>('screenshots');
@@ -272,14 +283,14 @@ export default function ScentGuideModal({ isOpen, onClose }: ScentGuideModalProp
             <div className="flex-1 overflow-y-auto px-4 sm:px-10 py-6 sm:py-8 scrollbar-thin scrollbar-thumb-brand-pink/20">
               <AnimatePresence mode="wait">
                 
-                {/* 1. SCENT DETAIL EXPANDED VIEW WITH INTERACTIVE PYRAMID */}
+                {/* 1. SCENT DETAIL EXPANDED VIEW WITH INTERACTIVE PYRAMID AND BANNER ILLUSTRATION */}
                 {selectedScent ? (
                   <motion.div
                     key="scent-detail"
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -20 }}
-                    className="max-w-3xl mx-auto space-y-8"
+                    className="max-w-3xl mx-auto space-y-10"
                   >
                     {/* Back Button */}
                     <button
@@ -293,6 +304,7 @@ export default function ScentGuideModal({ isOpen, onClose }: ScentGuideModalProp
                       Retour au menu
                     </button>
 
+                    {/* Scent Pyramid Block */}
                     <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center pt-2">
                       
                       {/* Left: The Olfactory Pyramid segment built in premium CSS clip-paths */}
@@ -378,14 +390,14 @@ export default function ScentGuideModal({ isOpen, onClose }: ScentGuideModalProp
                         </div>
 
                         {/* Storytelling notes */}
-                        <p className="text-sm text-brand-cream/90 font-serif leading-relaxed italic">
+                        <p className="text-xs sm:text-sm text-brand-cream/90 font-serif leading-relaxed italic">
                           "{selectedScent.desc}"
                         </p>
 
                         <div className="w-10 h-px bg-brand-pink/25" />
 
                         {/* List of notes linked dynamically to active pyramid level */}
-                        <div className="space-y-4 pt-2">
+                        <div className="space-y-3 pt-1">
                           
                           {/* Note Tête */}
                           <div 
@@ -396,7 +408,7 @@ export default function ScentGuideModal({ isOpen, onClose }: ScentGuideModalProp
                             }`}
                           >
                             <span className="block font-mono text-[9px] uppercase tracking-widest text-brand-pink font-bold mb-1">
-                              Notes de Tête (Volatilité haute - 30 min)
+                              Notes de Tête (Volatilité haute)
                             </span>
                             <p className="text-xs text-brand-cream font-medium">
                               {selectedScent.tête}
@@ -412,7 +424,7 @@ export default function ScentGuideModal({ isOpen, onClose }: ScentGuideModalProp
                             }`}
                           >
                             <span className="block font-mono text-[9px] uppercase tracking-widest text-brand-pink font-bold mb-1">
-                              Notes de Cœur (Corps du parfum - 4 heures)
+                              Notes de Cœur (Corps du parfum)
                             </span>
                             <p className="text-xs text-brand-cream font-medium">
                               {selectedScent.coeur}
@@ -428,7 +440,7 @@ export default function ScentGuideModal({ isOpen, onClose }: ScentGuideModalProp
                             }`}
                           >
                             <span className="block font-mono text-[9px] uppercase tracking-widest text-brand-pink font-bold mb-1">
-                              Notes de Fond (Fixateur longue durée - 24 heures)
+                              Notes de Fond (Fixateur longue durée)
                             </span>
                             <p className="text-xs text-brand-cream font-medium">
                               {selectedScent.fond}
@@ -436,13 +448,48 @@ export default function ScentGuideModal({ isOpen, onClose }: ScentGuideModalProp
                           </div>
 
                         </div>
-
-                        {/* Safe product mention */}
-                        <div className="pt-2 text-[10px] text-brand-text-muted font-light leading-relaxed">
-                          * Nos fragrances sont rigoureusement sélectionnées à Grasse, garanties **sans substances CMR** et **sans phtalates** pour préserver la santé et la pureté de votre intérieur.
-                        </div>
                       </div>
 
+                    </div>
+
+                    {/* NEW: The gorgeous illustrated brochure card displayed below the pyramid */}
+                    {selectedScent.img && (
+                      <div className="pt-8 border-t border-brand-pink/10 space-y-4">
+                        <div className="text-center">
+                          <span className="inline-block px-3 py-1 rounded-full bg-brand-depth/90 border border-brand-pink/10 text-[9px] font-mono text-brand-pink uppercase tracking-widest mb-1.5">
+                            Fiche d'Artisanat d'Atelier
+                          </span>
+                          <h4 className="font-serif font-bold text-lg text-brand-cream">
+                            La Brochure Olfactive
+                          </h4>
+                          <p className="text-[10px] text-brand-text-muted font-light">
+                            Cliquez sur la loupe pour l'afficher en plein écran haute résolution.
+                          </p>
+                        </div>
+
+                        <div className="relative aspect-[3/4] sm:aspect-[4/3.2] max-w-xl mx-auto rounded-2xl overflow-hidden border border-brand-pink/15 bg-brand-bg shadow-2xl flex items-center justify-center group">
+                          <img
+                            src={selectedScent.img}
+                            alt={selectedScent.name}
+                            className="w-full h-full object-contain filter brightness-[97%] group-hover:scale-102 transition-transform duration-500"
+                            referrerPolicy="no-referrer"
+                          />
+
+                          {/* Zoom Lightbox Trigger */}
+                          <button
+                            onClick={() => setZoomImage(selectedScent.img)}
+                            className="absolute top-4 right-4 p-2.5 rounded-full bg-brand-bg/90 border border-brand-pink/20 text-brand-pink hover:bg-brand-pink hover:text-brand-bg transition-all cursor-pointer shadow-lg z-20"
+                            title="Agrandir la fiche"
+                          >
+                            <ZoomIn className="w-4 h-4" />
+                          </button>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Footer Safe product mention */}
+                    <div className="pt-4 text-[10px] text-brand-text-muted text-center font-light leading-relaxed max-w-lg mx-auto">
+                      * Nos fragrances sont rigoureusement sélectionnées à Grasse, garanties **sans substances CMR** et **sans phtalates** pour préserver la santé et la pureté de votre intérieur.
                     </div>
                   </motion.div>
                 ) : (
@@ -515,7 +562,7 @@ export default function ScentGuideModal({ isOpen, onClose }: ScentGuideModalProp
                                 currentIndex === idx ? 'bg-brand-pink w-6 shadow-sm' : 'bg-brand-pink/20 hover:bg-brand-pink/40'
                               }`}
                               aria-label={`Fiche ${idx + 1}`}
-                            />
+                        />
                           ))}
                         </div>
                       </motion.div>
