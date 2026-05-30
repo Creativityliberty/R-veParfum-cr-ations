@@ -119,7 +119,7 @@ export default function DeliveryPage({
       "Bonjour Christelle et Mélanie, je souhaite me renseigner sur les formalités d'expédition ou de retrait à l'atelier d'une création Rêve Parfumé !",
     );
     window.open(
-      `https://wa.me/33600000000?text=${text}`,
+      `https://wa.me/33781710985?text=${text}`,
       "_blank",
       "noopener,noreferrer",
     );
@@ -470,8 +470,20 @@ export default function DeliveryPage({
             </div>
             
             <div className="relative z-10 flex flex-col items-center">
-              <div className="flex justify-center mb-3 bg-white p-2 rounded-xl">
-                <img src="https://upload.wikimedia.org/wikipedia/fr/4/4b/Mondial_Relay_logo.svg" alt="Mondial Relay" className="h-6 object-contain" />
+              <div className="flex justify-center mb-3 bg-white px-4 py-2 rounded-xl shadow-md border border-zinc-100">
+                {/* Clean, high-fidelity inline SVG logo for Mondial Relay */}
+                <svg className="h-6 w-auto" viewBox="0 0 320 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M22.5 56.4V22.2H32.7L43.8 45.4L54.9 22.2H65.1V56.4H56.9V33.6L46.8 54.4H40.8L30.7 33.6V56.4H22.5Z" fill="#CE0058" />
+                  <path d="M72.2 44.5C72.2 36.7 78.3 30.6 86.1 30.6C93.9 30.6 100 36.7 100 44.5C100 52.3 93.9 58.4 86.1 58.4C78.3 58.4 72.2 52.3 72.2 44.5ZM91.8 44.5C91.8 41.3 89.2 38.7 86.1 38.7C83 38.7 80.4 41.3 80.4 44.5C80.4 47.7 83 50.3 86.1 50.3C89.2 50.3 91.8 47.7 91.8 44.5Z" fill="#CE0058" />
+                  <path d="M106.6 56.4V31.8H114.2V36.2C116.1 32.8 119.5 30.6 123.6 30.6C130.6 30.6 134.7 35.3 134.7 42.6V56.4H126.9V43.8C126.9 39.7 124.6 37.4 120.9 37.4C117.2 37.4 114.4 39.8 114.4 44.3V56.4H106.6Z" fill="#CE0058" />
+                  <path d="M157.1 56.4H149.5V52.1C147.6 55.4 144.2 57.6 140.1 57.6C133.1 57.6 129 52.9 129 45.6C129 38.3 133.1 33.6 140.1 33.6C144.2 33.6 147.6 35.8 149.5 39.1V22.2H157.1V56.4ZM149.5 45.6C149.5 41.1 146.7 38.7 143 38.7C139.3 38.7 136.6 41.1 136.6 45.6C136.6 50.1 139.3 52.5 143 52.5C146.7 52.5 149.5 50.1 149.5 45.6Z" fill="#CE0058" />
+                  <path d="M165.7 25.6C165.7 23.2 167.6 21.3 170 21.3C172.4 21.3 174.3 23.2 174.3 25.6C174.3 28 172.4 29.9 170 29.9C167.6 29.9 165.7 28 165.7 25.6ZM166.1 56.4V31.8H173.9V56.4H166.1Z" fill="#CE0058" />
+                  <path d="M194.2 56.4H186.6V52.1C184.7 55.4 181.3 57.6 177.2 57.6C170.2 57.6 166.1 52.9 166.1 45.6C166.1 38.3 170.2 33.6 177.2 33.6C181.3 33.6 184.7 35.8 186.6 39.1V31.8H194.2V56.4ZM186.6 45.6C186.6 41.1 183.8 38.7 180.1 38.7C176.4 38.7 173.7 41.1 173.7 45.6C173.7 50.1 176.4 52.5 180.1 52.5C183.8 52.5 186.6 50.1 186.6 45.6Z" fill="#CE0058" />
+                  <path d="M201.2 56.4V22.2H209V56.4H201.2Z" fill="#CE0058" />
+                  <path d="M228.3 22.2H236.1V48C236.1 53 238.4 55.2 242.1 55.2C245.8 55.2 248.1 53 248.1 48V22.2H255.9V47.5C255.9 57.9 249.7 61.8 242.1 61.8C234.5 61.8 228.3 57.9 228.3 47.5V22.2Z" fill="#CE0058" />
+                  <circle cx="282" cy="40" r="18" fill="#1C2D5A" />
+                  <path d="M275 35H289M275 40H289M278 45H286" stroke="white" strokeWidth="2.5" strokeLinecap="round" />
+                </svg>
               </div>
               <p className="text-xs text-brand-cream font-serif italic max-w-[200px] bg-black/40 px-3 py-2 rounded-lg backdrop-blur-sm border border-brand-pink/20">
                 "Une occasion parfaite de récupérer vos cires au vert, ou au Locker le plus proche."

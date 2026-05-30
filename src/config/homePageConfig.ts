@@ -3,6 +3,7 @@ import coffretImg from '../assets/images/products/coffret_cadeau_luxe.png';
 import fondantsImg from '../assets/images/products/fondants_parfumes.png';
 import atelierCoulageImg from '../assets/images/atelier/atelier_bougie_coulage.png';
 import atelierBourgogneImg from '../assets/images/atelier/atelier_bourgogne.png';
+import atelierCreatricesHero from '../assets/images/atelier/atelier_creatrices_hero.png';
 import categoryBougiesImg from '../assets/images/categories/category_bougies.png';
 import categoryFondantsImg from '../assets/images/categories/category_fondants.png';
 import categoryBouquetsImg from '../assets/images/categories/category_bouquets.png';
@@ -14,13 +15,13 @@ export const homePageConfig = {
     shortName: "Rêve Parfumé",
     baseline: "Créations parfumées artisanales",
     locationLabel: "Atelier artisanal",
-    whatsappNumber: "33600000000",
+    whatsappNumber: "33781710985",
   },
 
   media: {
     heroVideoUrl: "", // Disabled to show the stunning background image directly
-    heroPoster: atelierBourgogneImg,
-    fallbackHeroImage: "/src/assets/images/atelier/atelier_bourgogne.png",
+    heroPoster: atelierCreatricesHero,
+    fallbackHeroImage: "/src/assets/images/atelier/atelier_creatrices_hero.png",
     craftVideoUrl: "https://player.vimeo.com/external/454583794.sd.mp4?s=d94eb3ed5b86a8ff35df17cfb6208bb42f4cfae9&profile_id=165&oauth2_token_id=57447761",
   },
 
@@ -71,16 +72,16 @@ export const homePageConfig = {
   },
 
   hero: {
-    eyebrow: "Créations parfumées artisanales",
+    eyebrow: "Confection Artisanale saine - Normandie",
     headlineLines: [
-      "Offrez une senteur",
-      "qui devient un souvenir."
+      "Arrêtez d'offrir",
+      "des souvenirs toxiques."
     ],
-    highlightedWords: ["senteur", "souvenir"],
-    subtitle: "Bougies, fondants, bouquets et cadeaux parfumés faits main, imaginés pour les intérieurs doux, les attentions précieuses et les moments qui restent.",
+    highlightedWords: ["toxiques.", "offrir"],
+    subtitle: "Bougies sculptées, cadres fleuris et fondants coulés un à un à la main en Normandie. De la cire de soja 100% bio et du lin naturel de notre terroir pour figer vos moments précieux dans un sillage olfactif inoubliable.",
     primaryCta: {
-      label: "Découvrir la boutique",
-      target: "shop",
+      label: "Créer ma bougie unique",
+      target: "custom",
       icon: "ArrowRight"
     },
     secondaryCta: {

@@ -260,33 +260,33 @@ export default function LegalPages({
                   />
                   <div className="bg-brand-bg/40 border border-brand-pink/10 rounded-xl p-4 text-xs font-light">
                     <h4 className="font-bold font-serif text-brand-cream text-sm mb-2">
-                      Christelle Bonnet-Girard
+                      Christelle BONNET-GIRARD
                     </h4>
                     <p className="text-brand-text-muted mb-1">
-                      Lotissement Les Prés Verts
+                      1 lotissement les prés vert
                     </p>
                     <p className="text-brand-text-muted mb-2">
                       76730 Saint-Ouen-le-Mauger
                     </p>
                     <p className="text-brand-cream font-mono">
-                      SIRET : 82 84 71 920 00029
+                      SIRET : 828 471 920 00029
                     </p>
                     <p className="text-brand-cream font-mono">
-                      Tél : 07.68.83.08.03
+                      Tél : 06.68.83.08.03
                     </p>
                   </div>
                   <div className="bg-brand-bg/40 border border-brand-pink/10 rounded-xl p-4 text-xs font-light">
                     <h4 className="font-bold font-serif text-brand-cream text-sm mb-2">
-                      Tapin Mélanie
+                      Mélanie TAUPIN
                     </h4>
                     <p className="text-brand-text-muted mb-1">
-                      1 Impasse des Chênes
+                      1 Impasse des chênes
                     </p>
                     <p className="text-brand-text-muted mb-2">
                       76890 Saint-Pierre-Bénouville
                     </p>
                     <p className="text-brand-cream font-mono">
-                      SIRET : 992 36 39 41 00015
+                      SIRET : 992 363 911 00015
                     </p>
                     <p className="text-brand-cream font-mono">
                       Tél : 07.81.71.09.85

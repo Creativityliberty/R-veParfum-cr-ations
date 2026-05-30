@@ -179,7 +179,7 @@ export default function ScentQuiz({ onSelectProduct, onClose }: ScentQuizProps) 
     
     const encoded = encodeURIComponent(text);
     // Open whatsapp with Christelle and Mélanie team context
-    window.open(`https://wa.me/33600000000?text=${encoded}`, '_blank');
+    window.open(`https://wa.me/33781710985?text=${encoded}`, '_blank');
   };
 
   return (

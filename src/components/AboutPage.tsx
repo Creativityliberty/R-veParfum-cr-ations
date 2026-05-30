@@ -101,7 +101,7 @@ export default function AboutPage({
       "Bonjour Mélanie et Christelle, je viens de lire l'histoire de Rêve Parfumé Création et j'aimerais beaucoup commander une création artisanale !",
     );
     window.open(
-      `https://wa.me/33600000000?text=${textMsg}`,
+      `https://wa.me/33781710985?text=${textMsg}`,
       "_blank",
       "noreferrer,noopener",
     );
@@ -267,7 +267,7 @@ export default function AboutPage({
               Portraits d'Atelier
             </span>
             <h2 className="text-2xl md:text-3xl font-serif font-bold text-brand-cream">
-              Vos créatrices en Bourgogne
+              Vos créatrices en Normandie
             </h2>
             <p className="text-xs text-brand-text-muted max-w-sm mx-auto">
               Chaque commande passe directement entre nos quatre mains

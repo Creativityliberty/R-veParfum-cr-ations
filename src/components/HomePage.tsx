@@ -324,7 +324,7 @@ export default function HomePage({
           </p>
         </div>
 
-        {/* Elegant Bourgonian Workshop Banner above Categories Grid */}
+        {/* Elegant Normand Workshop Banner above Categories Grid */}
         <div className="relative rounded-[2rem] overflow-hidden aspect-[21/9] md:aspect-[3/1] border border-brand-pink/15 shadow-2xl group">
           <img
             src={atelierBourgogneImg}
@@ -339,7 +339,7 @@ export default function HomePage({
               Savoir-Faire Artisanal
             </span>
             <h3 className="font-serif font-bold text-2xl md:text-3xl text-brand-cream leading-tight">
-              Façonné à la main en Bourgogne
+              Façonné à la main en Normandie
             </h3>
             <p className="hidden md:block text-xs text-brand-text-muted leading-relaxed font-light">
               Mélanie & Christelle conçoivent vos bougies, fondants, suspensions et bouquets avec de pures matières végétales et locales.
@@ -663,7 +663,7 @@ export default function HomePage({
                   Le Geste d'Art
                 </span>
                 <h2 className="text-3xl md:text-5xl font-serif font-black text-brand-cream leading-none">
-                  Un atelier bourguignon où chaque détail compte.
+                  Un atelier normand où chaque détail compte.
                 </h2>
                 <p className="text-xs md:text-sm text-brand-text-muted leading-relaxed font-light">
                   Mélanie et Christelle coulent à la main de nobles matières
@@ -683,7 +683,7 @@ export default function HomePage({
                   },
                   {
                     title: "Fleurissement Régional",
-                    desc: "Chaque tablette est parsemée de lavande de notre jardin ou de fleurs locales bourguignonnes.",
+                    desc: "Chaque création est parsemée de lavande de notre jardin ou de fleurs locales normandes.",
                     icon: <Heart className="w-5 h-5 text-[#E8D3B0]" />,
                   },
                   {
@@ -740,14 +740,12 @@ export default function HomePage({
                       <span className="text-indigo-650">10% max</span>
                     </div>
                     <div className="flex justify-between border-b pb-0.5">
-                      <span>Fleurs Bour:</span>{" "}
-                      <span className="text-zinc-600">Cueillette</span>
+                      <span>Fleurs Norm:</span>{" "}
+                      <span className="text-zinc-650">Cueillette</span>
                     </div>
                     <div className="flex justify-between pt-0.5">
                       <span>Cure sillage:</span>{" "}
-                      <span className="text-brand-pink-hover font-bold">
-                        14j
-                      </span>
+                      <span className="text-brand-pink-hover font-bold">14j</span>
                     </div>
                   </div>
                 </div>
@@ -826,7 +824,7 @@ export default function HomePage({
                       onClick={() => navigateTo("scentQuiz")}
                       className="w-full p-3 rounded-lg border border-zinc-100 bg-zinc-50/50 hover:bg-zinc-50 flex justify-between items-center text-left transition-all cursor-pointer text-zinc-500 text-[11px] font-normal"
                     >
-                      <span>La Table Gourmande (Séjour/Cuisine)</span>
+                      <span>L'Instant Réconfort (Salon &amp; Lecture)</span>
                       <span>Pomme d'Amour →</span>
                     </button>
                   </div>
@@ -947,10 +945,7 @@ export default function HomePage({
                   </span>
                 </div>
                 <p className="text-[11px] text-zinc-650 leading-relaxed font-light">
-                  Aucun paiement n’est requis en ligne. Votre commande fleurs et
-                  ciment, après validation sur WhatsApp avec les créatrices,
-                  vous est préparée et sécurisée. Retrait atelier (gratuit, 21)
-                  ou livraison solide !
+                  Aucun paiement n’est requis en ligne. Votre commande personnalisée, après validation sur WhatsApp avec les créatrices, vous est préparée et sécurisée. Retrait atelier (gratuit, 76) ou livraison solide !
                 </p>
               </div>
 
@@ -980,7 +975,7 @@ export default function HomePage({
                   <CheckCircle2 className="w-3 h-3 text-brand-pink" /> Devis gratuit sans obligation
                 </span>
                 <span className="flex items-center gap-1">
-                  <CheckCircle2 className="w-3 h-3 text-brand-pink" /> Fabrication artisanale bourguignonne
+                  <CheckCircle2 className="w-3 h-3 text-brand-pink" /> Fabrication artisanale normande
                 </span>
               </div>
             </div>

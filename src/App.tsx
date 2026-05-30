@@ -371,7 +371,7 @@ export default function App() {
                 Des créations parfumées faites main, pensées pour offrir, décorer et parfumer avec douceur. Concepteur de douceurs parfumées saines et artisanales à base de pure cire végétale de soja et de véritables fleurs séchées locales.
               </p>
               <div className="pt-2 text-[11px] font-mono text-brand-pink/80">
-                Bourgogne, France · Co-géré par Christelle & Mélanie
+                Normandie, France · Co-géré par Christelle & Mélanie
               </div>
             </div>
 

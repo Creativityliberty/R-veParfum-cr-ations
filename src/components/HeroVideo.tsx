@@ -70,7 +70,7 @@ export default function HeroVideo() {
         src={homePageConfig.media.heroPoster}
         alt="Atelier cire douce fallback background"
         className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 z-0 ${
-          hasVideo && isVideoLoaded ? 'opacity-25' : 'opacity-50'
+          hasVideo && isVideoLoaded ? 'opacity-25' : 'opacity-75'
         }`}
         referrerPolicy="no-referrer"
       />

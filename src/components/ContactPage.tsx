@@ -50,7 +50,7 @@ export default function ContactPage({ setCurrentTab, onSuccess }: ContactPagePro
 
   const handleWhatsAppAction = (text: string) => {
     const encoded = encodeURIComponent(text);
-    window.open(`https://wa.me/33600000000?text=${encoded}`, '_blank', 'noreferrer,noopener');
+    window.open(`https://wa.me/33781710985?text=${encoded}`, '_blank', 'noreferrer,noopener');
     onSuccess("L'envoi vers notre ligne WhatsApp d'atelier a été initié.");
   };
 

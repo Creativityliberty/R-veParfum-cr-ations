@@ -42,7 +42,7 @@ export type PersonalizationFormState = {
 export const personalizationPageConfig = {
   brand: {
     name: "Rêve Parfumé Création",
-    whatsappNumber: "33600000000",
+    whatsappNumber: "33781710985",
   },
 
   page: {
@@ -128,21 +128,28 @@ export const personalizationPageConfig = {
   ] as OccasionOption[],
 
   scentMoods: [
-    { id: "floral", label: "Ambiance Florale", desc: "Notes douces de fleurs fraîches et romantiques (Fleur de coton, cerisier).", mood: "Doux & romantique" },
-    { id: "gourmand", label: "Ambiance Gourmande", desc: "Notes chaudes, sucrées et réconfortantes (Caramel beurre salé, vanille).", mood: "Chaleureux & réconfortant" },
-    { id: "frais", label: "Ambiance Fraîche", desc: "Effluves purs, lumineux et herbacés (Eucalyptus, menthe glaciale).", mood: "Pur & lumineux" },
-    { id: "boise", label: "Ambiance Boisée", desc: "Caractère élégant, profond et mystérieux (Ambre impérial, bois précieux).", mood: "Élégant & profond" },
-    { id: "poudre", label: "Ambiance Poudrée", desc: "Notes délicates de maquillage rétro et de cocooning (Poudre de riz).", mood: "Délicat & cocooning" },
-    { id: "fruite", label: "Ambiance Fruitée", desc: "Effluves joyeux, solaires et pétillants (Pêche veloutée, fruits rouges).", mood: "Joyeux & pétillant" },
+    { id: "delice-interdit", label: "Délice Interdit", desc: "Une note sensuelle et mystérieuse, idéale pour les intérieurs cocooning.", mood: "Cocooning & Sensuel" },
+    { id: "cerise-noire", label: "Cerise Noire explosive", desc: "Un parfum fruité intense et pétillant qui éveille les sens.", mood: "Intense & Fruité" },
+    { id: "pomme-amour", label: "Pomme d'Amour", desc: "Une fragrance douce et sucrée rappelant les fêtes foraines de notre enfance.", mood: "Doux & Réconfortant" },
+    { id: "monoi", label: "Monoï", desc: "Un parfum solaire et estival, idéal pour s'évader dans les îles.", mood: "Solaire & Exotique" },
+    { id: "clementine-monoi", label: "Clémentine Monoï", desc: "Une fraîcheur hespéridée mariée à la sensualité du Monoï.", mood: "Frais & Solaire" },
+    { id: "peche", label: "Pêche", desc: "Une senteur douce, juteuse et veloutée de pêche de vigne.", mood: "Doux & Velouté" },
+    { id: "fleur-coton", label: "Fleur de coton", desc: "Une fragrance pure, poudrée et réconfortante.", mood: "Pur, Poudré & Propre" },
+    { id: "fruit-rouge", label: "Fruit Rouge", desc: "Une explosion de baies sauvages, acidulée et joyeuse.", mood: "Joyeux & Acidulé" },
+    { id: "agrume", label: "Agrume", desc: "Un sillage hespéridé énergisant et pétillant.", mood: "Énergisant & Pétillant" },
+    { id: "lilas", label: "Lilas", desc: "Une senteur fleurie et délicate, typique du printemps.", mood: "Fleuri & Printanier" },
     { id: "atelier_choice", label: "Je laisse choisir l'atelier", desc: "Faites confiance au nez de Christelle et Mélanie selon la saison.", mood: "Inspirant & mystérieux" },
   ] as ScentMoodOption[],
 
   colorMoods: [
-    { id: "blanc", label: "Blanc Pur & Naturel", hex: "#FDFBF7" },
-    { id: "rose", label: "Rose Dragée & Poudré", hex: "#FADADD" },
-    { id: "vert", label: "Vert Sauge & Eucalyptus", hex: "#BCD4C4" },
-    { id: "terracotta", label: "Terracotta & Ambre", hex: "#CD7F32" },
-    { id: "bleu", label: "Bleu Brume & Brise", hex: "#B0C4DE" },
+    { id: "rose-blanc", label: "Rose / Blanc", hex: "#F5C3C8" },
+    { id: "violet-rose-blanc", label: "Violet / Rose / Blanc", hex: "#D4B2D8" },
+    { id: "bleu-blanc", label: "Bleu / Blanc", hex: "#B4CBEA" },
+    { id: "orange-blanc", label: "Orange / Blanc", hex: "#FED2A9" },
+    { id: "vert-blanc", label: "Vert / Blanc", hex: "#CCE4D2" },
+    { id: "marron-beige-blanc", label: "Marron / Beige / Blanc", hex: "#D3C2B0" },
+    { id: "jaune-blanc", label: "Jaune / Blanc", hex: "#FFEFA6" },
+    { id: "rouge-blanc", label: "Rouge / Blanc", hex: "#FFAAAA" },
     { id: "ensemble", label: "À définir ensemble", gradient: "bg-gradient-to-r from-brand-pink via-brand-purple to-brand-pink" },
   ] as ColorMoodOption[],
 
