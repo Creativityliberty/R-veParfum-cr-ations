@@ -21,7 +21,7 @@ import { Product } from "../types";
 import { SCENTS, COLORS } from "../data";
 import ScentHoverCard from "./ScentHoverCard";
 
-import atelierBourgogneImg from "../assets/images/atelier/atelier_bourgogne.png";
+import produitsMix1 from "../assets/images/products/produits_mix_1.jpeg";
 import atelierCoulageImg from "../assets/images/atelier/atelier_bougie_coulage.png";
 
 interface ProductDetailsModalProps {
@@ -101,7 +101,7 @@ export default function ProductDetailsModal({
   const productImages = [
     product.image,
     atelierCoulageImg,
-    atelierBourgogneImg
+    produitsMix1
   ];
 
   const nextImage = () => {
@@ -368,7 +368,7 @@ Merci infiniment ! Au plaisir d'échanger sur la préparation de mon paquet fleu
                       Fait main
                     </span>
                     <p className="text-[10px] text-brand-text-muted leading-tight">
-                      Confectionnée artisanalement avec précaution en Bourgogne.
+                      Confectionnée artisanalement avec précaution en Normandie.
                     </p>
                   </div>
                   <div className="p-3 rounded-xl bg-brand-bg/40 border border-brand-pink/5 text-left text-xs space-y-1 flex flex-col justify-start">

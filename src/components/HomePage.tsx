@@ -26,7 +26,7 @@ import HeroVideo from "./HeroVideo";
 import AnimatedHeadline from "./AnimatedHeadline";
 import LifestyleCarousel from "./LifestyleCarousel";
 import { Product } from "../types";
-import atelierBourgogneImg from "../assets/images/atelier/atelier_bourgogne.png";
+import produitsMix1 from "../assets/images/products/produits_mix_1.jpeg";
 import photoDeNousImg from "../assets/images/atelier/photo_de_nous.jpeg";
 
 interface HomePageProps {
@@ -319,7 +319,7 @@ export default function HomePage({
           <p className="text-xs md:text-sm text-brand-text-muted leading-relaxed font-light">
             {homePageConfig.hero.subtitle.replace(
               "Bougies, fondants, bouquets",
-              "Explorez au-delà des mots notre sélection de contenants et formats coulés en Bourgogne.",
+              "Explorez au-delà des mots notre sélection de contenants et formats parfumés coulés en Normandie.",
             )}
           </p>
         </div>
@@ -327,7 +327,7 @@ export default function HomePage({
         {/* Elegant Normand Workshop Banner above Categories Grid */}
         <div className="relative rounded-[2rem] overflow-hidden aspect-[21/9] md:aspect-[3/1] border border-brand-pink/15 shadow-2xl group">
           <img
-            src={atelierBourgogneImg}
+            src={produitsMix1}
             alt="Mises en contexte et fabrication à l'atelier"
             className="w-full h-full object-cover transition-transform duration-[1200ms] group-hover:scale-105"
             referrerPolicy="no-referrer"

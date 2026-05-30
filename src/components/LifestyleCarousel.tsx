@@ -50,7 +50,7 @@ const LIFESTYLE_SLIDES: LifestyleSlide[] = [
       "Harmonisez vos moments de pause. Un sillage léger de Fleur de Coton pour envelopper votre bibliothèque ou votre pièce de vie favorite d'une douceur infinie.",
     image: produitsMix1,
     context:
-      "Mis en situation : Un après-midi pluvieux de Bourgogne, éclairé par la lueur ambrée d'un pot d'apothicaire.",
+      "Mis en situation : Un après-midi pluvieux de Normandie, éclairé par la lueur ambrée d'un pot d'apothicaire.",
     quote:
       "\"La bougie crépite doucement à côté d'un thé fumant. Ma maison est un havre d'apaisement.\" — Mélissa",
     accentNote: "Inspiration : Cosy & Fleur de Coton",

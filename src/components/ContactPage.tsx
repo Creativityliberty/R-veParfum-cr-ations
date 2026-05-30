@@ -133,7 +133,7 @@ Je souhaite par cette demande initier un accompagnement avec l'atelier pour donn
           {/* Decorative bubbles represent direct messaging */}
           <div className="hidden sm:block absolute top-12 left-0 lg:-left-12 p-3 bg-brand-bg/80 border border-brand-pink/10 rounded-2xl text-[10px] text-brand-pink font-mono tracking-wide backdrop-blur-md flex items-center gap-1.5">
             <MessageSquare className="w-3.5 h-3.5 text-brand-pink" />
-            Ligne directe en Bourgogne
+            Ligne directe en Normandie
           </div>
           <div className="hidden sm:block absolute bottom-0 right-0 lg:-right-12 p-3 bg-brand-bg/80 border border-brand-pink/10 rounded-2xl text-[10px] text-brand-purple font-mono tracking-wide backdrop-blur-md flex items-center gap-1.5">
             <Clock className="w-3.5 h-3.5 text-brand-purple" />
@@ -357,7 +357,7 @@ Je souhaite par cette demande initier un accompagnement avec l'atelier pour donn
               Retrait Atelier
             </div>
             <p className="text-[11px] text-brand-text-muted leading-relaxed font-light">
-              Le retrait de vos créations s'effectue sur rendez-vous à notre atelier de Bourgogne. L'adresse précise vous est partagée dès solidification de la cire végétale.
+              Le retrait de vos créations s'effectue sur rendez-vous à notre atelier de Normandie. L'adresse précise vous est partagée dès solidification de la cire végétale.
             </p>
           </div>
 

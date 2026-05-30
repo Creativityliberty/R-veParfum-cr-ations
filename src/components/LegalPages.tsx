@@ -430,7 +430,7 @@ export default function LegalPages({
                   <p>
                     Les présentes Conditions Générales de Vente (CGV) encadrent
                     en exclusivité la vente de créations parfumées végétales
-                    artisanales et de contenants d'art en Bourgogne, proposées
+                    artisanales et de contenants d'art en Normandie, proposées
                     sous l'enseigne commune{" "}
                     <strong className="text-brand-cream">
                       Rêve Parfumé Création
@@ -649,7 +649,7 @@ export default function LegalPages({
                 <div className="pt-6 border-t border-brand-pink/10 flex flex-col md:flex-row justify-between items-center gap-4 text-left">
                   <div className="space-y-1 text-xs">
                     <p className="text-brand-cream font-serif font-bold">
-                      Un projet spécial en Bourgogne ?
+                      Un projet spécial en Normandie ?
                     </p>
                     <p className="text-brand-text-muted font-light leading-relaxed">
                       Les commandes de mariages exigent au moins un mois
@@ -741,7 +741,7 @@ export default function LegalPages({
                   </li>
                   <li>
                     Préparer les colis et assurer le sillage postal de livraison
-                    ou de retrait à notre domicile de Bourgogne ;
+                    ou de retrait à notre domicile de Normandie ;
                   </li>
                   <li>
                     Émettre les devis événementiels ou d'ateliers à domicile ;
@@ -899,7 +899,7 @@ export default function LegalPages({
               </LegalSection>
 
               {/* 3. Retrait à domicile */}
-              <LegalSection title="3. Retrait physique à notre Atelier en Bourgogne">
+              <LegalSection title="3. Retrait physique à notre Atelier en Normandie">
                 <p>
                   Durant les périodes d'ensoleillement d'avril à septembre
                   (hors-envois postaux) ou à tout moment pour les clients

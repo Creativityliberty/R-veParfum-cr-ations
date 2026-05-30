@@ -2,7 +2,7 @@ import bougiePotImg from '../assets/images/products/bougie_pot_artisanale.png';
 import coffretImg from '../assets/images/products/coffret_cadeau_luxe.png';
 import fondantsImg from '../assets/images/products/fondants_parfumes.png';
 import atelierCoulageImg from '../assets/images/atelier/atelier_bougie_coulage.png';
-import atelierBourgogneImg from '../assets/images/atelier/atelier_bourgogne.png';
+import produitsMix1 from '../assets/images/products/produits_mix_1.jpeg';
 import atelierCreatricesHero from '../assets/images/atelier/atelier_creatrices_hero.png';
 import categoryBougiesImg from '../assets/images/categories/category_bougies.png';
 import categoryFondantsImg from '../assets/images/categories/category_fondants.png';

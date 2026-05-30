@@ -36,7 +36,7 @@ export const shopPageConfig = {
       target: "whatsapp",
     },
     badges: [
-      "Fait main en Bourgogne",
+      "Fait main en Normandie",
       "Cire 100% Soja",
       "Huiles de Grasse certifiées",
       "Éco-responsable",

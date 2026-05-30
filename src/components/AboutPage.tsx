@@ -1,6 +1,7 @@
 import React from "react";
 import atelierCoulageImg from '../assets/images/atelier/atelier_bougie_coulage.png';
-import atelierBourgogneImg from '../assets/images/atelier/atelier_bourgogne.png';
+import coffretImg from '../assets/images/products/coffret_cadeau_luxe.png';
+import fondantsImg from '../assets/images/products/fondants_parfumes.png';
 import bougiePotImg from '../assets/images/products/bougie_pot_artisanale.png';
 import cadreImg from '../assets/images/products/cadre_cire_fleurs.png';
 import photoDeNousImg from '../assets/images/atelier/photo_de_nous.jpeg';
@@ -44,7 +45,7 @@ export default function AboutPage({
     },
     {
       title: "Fait Main",
-      desc: "Chaque création est coulée, parée de botaniques et étiquetée manuellement par Christelle et Mélanie au cœur de la Bourgogne.",
+      desc: "Chaque création est coulée, parée de botaniques et étiquetée manuellement par Christelle et Mélanie au cœur de la Normandie.",
       icon: <Award className="w-5 h-5 text-brand-pink" />,
     },
     {
@@ -129,7 +130,7 @@ export default function AboutPage({
         <div className="relative z-10 text-center space-y-6 max-w-4xl mx-auto mt-12 md:mt-16">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-brand-pink/10 border border-brand-pink/20 text-brand-pink text-xs font-mono font-bold uppercase tracking-widest leading-none">
             <Sparkles className="w-3.5 h-3.5" />
-            Atelier Artisanal Bourgogne
+            Atelier Artisanal Normandie
           </div>
 
           <h1 className="text-4xl md:text-6xl font-serif font-bold text-brand-cream tracking-tight leading-none">
@@ -219,8 +220,8 @@ export default function AboutPage({
             <div className="space-y-4">
               <div className="rounded-[28px] overflow-hidden border border-brand-pink/15 aspect-[4/5] bg-brand-depth/40 relative group shadow-lg">
                 <img
-                  src={atelierCoulageImg}
-                  alt="Coulage manuel de la cire"
+                  src={fondantsImg}
+                  alt="Fondants parfumés coulés à la main"
                   className="w-full h-full object-cover filter transition-transform duration-500 group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
@@ -229,7 +230,7 @@ export default function AboutPage({
               <div className="rounded-[24px] overflow-hidden border border-brand-pink/10 aspect-square bg-brand-depth/30 shadow-inner">
                 <img
                   src={cadreImg}
-                  alt="Arrangement délicat de fleurs séchées"
+                  alt="Cadre en cire fleurie suspendu"
                   className="w-full h-full object-cover filter sepia-[15%]"
                   referrerPolicy="no-referrer"
                 />
@@ -240,15 +241,15 @@ export default function AboutPage({
               <div className="rounded-[24px] overflow-hidden border border-brand-pink/10 aspect-square bg-brand-depth/30 shadow-inner">
                 <img
                   src={bougiePotImg}
-                  alt="Poterie de contenu unique pour cire"
+                  alt="Bougie artisanale en pot en céramique"
                   className="w-full h-full object-cover"
                   referrerPolicy="no-referrer"
                 />
               </div>
               <div className="rounded-[28px] overflow-hidden border border-brand-pink/15 aspect-[4/5] bg-brand-depth/40 relative group shadow-lg">
                 <img
-                  src={atelierBourgogneImg}
-                  alt="Finition lin bio et emballage"
+                  src={coffretImg}
+                  alt="Coffret cadeau de luxe personnalisé"
                   className="w-full h-full object-cover filter brightness-[90%]"
                   referrerPolicy="no-referrer"
                 />
@@ -408,8 +409,8 @@ export default function AboutPage({
                   Véritables boutons de rose &amp; Lavande de Provence
                 </span>
                 <span className="px-3.5 py-1.5 rounded-full bg-brand-bg border border-brand-pink/10 text-[10px] font-mono text-brand-text-muted flex items-center gap-1.5 shadow-sm">
-                  <Sparkles className="w-3.5 h-3.5 text-brand-pink" />
-                  Grès d'art &amp; céramiques tournées en Bourgogne
+                  <Sparkles className="w-3.5 h-3.5" />
+                  Grès d'art &amp; céramiques tournées en Normandie
                 </span>
                 <span className="px-3.5 py-1.5 rounded-full bg-brand-bg border border-brand-pink/10 text-[10px] font-mono text-brand-text-muted flex items-center gap-1.5 shadow-sm">
                   <Droplet className="w-3.5 h-3.5 text-brand-pink" />
